@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Magica !</title>
+    
+    <!-- ### CSS ### -->
+	<style rel="stylesheet" type="text/css">
+        
+        html, body { height: 100%; width: 100%; min-height: 470px; min-width: 470px;}
+        body {
+            color: white;
+            font-size: 16px;
+            background: radial-gradient(#4B0082, grey, darkslateblue);
+        }
+        
+        .molduraLeft {
+            height:50%; 
+            width:50%;
+            -webkit-animation-name: aparecerLeft; /* Safari 4.0 - 8.0 */
+            -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+            -webkit-animation-iteration-count: 1; /* Safari 4.0 - 8.0 */
+            animation-name: aparecerLeft;
+            animation-duration: 2s;
+            
+        }
+        /* Standard syntax */
+        @keyframes aparecerLeft {
+            0%   {left:-50%;}
+            100% {left:0px;}
+        }
+  
+        .molduraRight {
+            height:50%; 
+            width:50%;
+            -webkit-animation-name: aparecerRight; /* Safari 4.0 - 8.0 */
+            -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+            -webkit-animation-iteration-count: 1; /* Safari 4.0 - 8.0 */
+            animation-name: aparecerRight;
+            animation-duration: 2s;
+            
+        }
+        /* Standard syntax */
+        @keyframes aparecerRight {
+            0%   {right:-50%;}
+            100% {right:0px;}
+        }
+        
+        td:hover {
+            background-color: royalblue;
+            border-radius: 15px;
+            cursor: default;
+            -webkit-animation-name: brilhar; /* Safari 4.0 - 8.0 */
+            -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+            -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+            animation-name: brilhar;
+            animation-duration: 4s;
+        }
+        /* Standard syntax */
+        @keyframes brilhar {
+            0%   {background-color:royalblue;}
+            25%  {background-color:darkslateblue;}
+            50%  {background-color:blue;}
+            75%  {background-color:darkblue;}
+            100% {background-color:cyan;}
+        }
+        
+        .botoes {
+            border-radius: 80px;
+        }
+        .botoes:hover {
+            font-size: 20px;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    
+    <div class="w3-display-topleft molduraLeft"><img src=".\imgs\BG-TL.png" height=100% width=100%></div>
+    <div class="w3-display-topright molduraRight"><img src=".\imgs\BG-TR.png" height=100% width=100%></div>
+    <div class="w3-display-bottomleft molduraLeft"><img src=".\imgs\BG-BL.png" height=100% width=100%></div>
+    <div class="w3-display-bottomright molduraRight"><img src=".\imgs\BG-BR.png" height=100% width=100%></div>
+    
+    <div class="w3-display-container w3-display-middle" style="min-height: 470px; min-width: 470px;">
+        <h1 class="w3-center">Adivinhação !!!</h1>
+        
+        <div class="w3-container" style="display: none;">    
+            <div class="w3-display-container" style="height:150px;">
+                <h2>Este site irá adivinhar qual número você esta pensando neste exato momento !</h2>
+                <div class="w3-display-bottomleft w3-padding">Ainda não ...</div>
+                <div class="w3-display-bottomright w3-padding">Vamos nessa !</div>
+            </div>
+        </div>
+        
+        <!-- PRIMEIRA TABELA - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - -- - - - - - - - - - - - -->
+        <div class="w3-container w3-animate-opacity" style="width: 450px; display: none;">    
+            <div class="w3-display-container" style="height:220px; width: 440px;">
+                <div class="w3-center">O número que você pensou esta nessa tabela ??</div>
+                <table cellpadding="3" class="w3-display-container w3-display-middle w3-center">    
+                    <tbody>
+                        <tr><td>1</td><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr>
+                        <tr><td>17</td><td>19</td><td>21</td><td>23</td><td>25</td><td>27</td><td>29</td><td>31</td></tr>
+                        <tr><td>33</td><td>35</td><td>37</td><td>39</td><td>41</td><td>43</td><td>45</td><td>47</td></tr>
+                        <tr><td>49</td><td>51</td><td>53</td><td>55</td><td>57</td><td>59</td><td>61</td><td>63</td></tr>
+                    </tbody>
+                </table>
+                <div class="w3-display-bottomleft w3-padding w3-btn w3-ripple botoes">Não esta</div>
+                <div class="w3-display-bottomright w3-padding w3-btn w3-ripple botoes">SIM! Esta !</div> 
+            </div>
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        
+        <!-- SEGUNDA TABELA - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - -- - - - - - - - - - - - -->
+        <div class="w3-container w3-animate-opacity" style="width: 450px">    
+            <div class="w3-display-container" style="height:220px; width: 440px; display: none;">
+                <div class="w3-center">O número que você pensou esta nessa tabela ??</div>
+                <table cellpadding="3" class="w3-display-container w3-display-middle w3-center">    
+                    <tbody>
+                        <tr><td>2</td><td>3</td><td>6</td><td>7</td><td>10</td><td>11</td><td>14</td><td>15</td></tr>
+                        <tr><td>18</td><td>19</td><td>22</td><td>23</td><td>26</td><td>27</td><td>30</td><td>31</td></tr>
+                        <tr><td>34</td><td>35</td><td>38</td><td>39</td><td>42</td><td>43</td><td>46</td><td>47</td></tr>
+                        <tr><td>50</td><td>51</td><td>54</td><td>55</td><td>58</td><td>59</td><td>62</td><td>63</td></tr>
+                    </tbody>
+                </table>
+                <div class="w3-display-bottomleft w3-padding w3-btn w3-ripple botoes">Não esta</div>
+                <div class="w3-display-bottomright w3-padding w3-btn w3-ripple botoes">SIM! Esta !</div> 
+            </div>
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        
+        <!-- TERCEIRA TABELA - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - -- - - - - - - - - - - - -->
+        <div class="w3-container w3-animate-opacity" style="width: 450px; ">    
+            <div class="w3-display-container" style="height:220px; width: 440px;">
+                <div class="w3-center w3-hide-small"><p>O número que você pensou esta nessa tabela ??</p></div><br/>
+                <div class="w3-center w3-hide-large w3-hide-medium"><p>O número que você pensou, <br/>esta nessa tabela ??</p></div>
+                   <table cellpadding="6" class="w3-content w3-center" >    
+                        <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+                        <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+                        <tr><td>36</td><td>37</td><td>38</td><td>39</td><td>44</td><td>45</td><td>46</td><td>47</td></tr>
+                        <tr><td>52</td><td>53</td><td>54</td><td>55</td><td>60</td><td>61</td><td>62</td><td>63</td></tr>
+                    </table>
+                <br/>
+                <div class="w3-row">
+                    <div class="w3-third w3-padding w3-btn w3-ripple botoes">Não esta</div>
+                    <div class="w3-third w3-padding w3-btn w3-ripple botoes">SIM! Esta !</div>
+                    <div class="w3-third w3-padding w3-btn w3-ripple botoes"> ❮ ❮  Voltar </div> 
+                <br/><br/><br/>
+                </div>
+            </div>
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        
+    </div>
+</body>
+</html>
