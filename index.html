@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Magica !</title>
     
     <!-- ### CSS ### -->
@@ -52,17 +53,16 @@
             100% {right:0px;}
         }
         
-        h1 {
-            font-family: 'Rock Salt', cursive;
-        }
+        h1 {font-family: 'Rock Salt', cursive;}
         
-        table {
-            font-size: 16px;
+        table {font-size: 16px;}
+        
+        .entrarTabela {
             -webkit-animation-name: AparecerTabelas; /* Safari 4.0 - 8.0 */
             animation-name: AparecerTabelas;
-            -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+            -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
             -webkit-animation-iteration-count: 1; /* Safari 4.0 - 8.0 */
-            animation-duration: 2s;
+            animation-duration: 1.5s;
         }
         /* Standard syntax */
         @keyframes AparecerTabelas {
@@ -95,10 +95,44 @@
             letter-spacing: 3px;
             font-weight: bold;
             border-radius: 80px;
-            padding: 0px;
+            padding: 80px;
         }
         
+        .sairTabela {
+            opacity: 0.5;
+            position: relative;
+            -webkit-animation-name: DesaparecerTabelas; /* Safari 4.0 - 8.0 */
+            animation-name: DesaparecerTabelas;
+            -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+            -webkit-animation-iteration-count: 1; /* Safari 4.0 - 8.0 */
+            animation-duration: 1s;
+            left: -1500px;
+        }
+        /* Standard syntax */
+        @keyframes DesaparecerTabelas {
+            0%   {left:0px;}
+            99% {left: -1500px;}
+            100% {display: none;}
+        }
+        
+        .desaparecer {
+            -webkit-animation-name: DesaparecerItem; /* Safari 4.0 - 8.0 */
+            animation-name: DesaparecerItem;
+            -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+            -webkit-animation-iteration-count: 1; /* Safari 4.0 - 8.0 */
+            animation-duration: 1.5s;
+            opacity: 0.1;
+            
+        }
+        /* Standard syntax */
+        @keyframes DesaparecerItem {
+            0%   {opacity: 1;}
+            100% {opacity:0.1; display: none;}
+        }        
+        
     </style>
+    
+    
     
 </head>
 <body>
@@ -112,42 +146,131 @@
         
         <!-- CABEÇALHO - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <header>
-            <h1><div id="cabeca"></div></h1>
-            <div class="w3-hide-large w3-hide-medium Pequeno">
-            <p>O número que você pensou, <br/>esta nesta lista ?</p>
-            </div>
-            <div class="w3-hide-small Grande">
-            O número que você pensou, esta nesta lista ?<br/><br/>
+            <h1><div id="cabeca" class="w3-animate-zoom">A</div></h1>
+            <div id="inicio" style="display: none;">
+                <div class="w3-hide-large w3-hide-medium Pequeno"><p>O número que você pensou, <br/>esta nesta lista ?</p></div>
+                <div class="w3-hide-small Grande"><p>O número que você pensou, esta nesta lista ?</p><br/></div>
             </div>
         </header>
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+        <!-- INICIO - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <div id="tabelazero" class="w3-animate-zoom" style="width: 100%;">
+            <div class="w3-hide-large w3-hide-medium Pequeno">
+                <p>Este site irá adivinhar o número que você estará pensando!</p>
+                <p>Basta pensar em um número de 0 a 63.</p>
+            </div>
+            <div class="w3-hide-small Grande">
+                <p>Este site irá adivinhar o número que você estará pensando!</p>
+                <p>É bem simples e fácil, basta pensar em um número de 0 a 63.</p>
+                <p>Já pensou em um número ?</p><br/><br/>
+            </div>
+            <div class="w3-padding w3-btn w3-ripple botoes" onclick="afirmativo()" style="width: 80%"><b>Ja Pensei no número!</b></div>
+     
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --> 
+       
+        <!-- PRIMEIRA TABELA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <div id="tabelaum" class="normal" style="display: none;">
+            <table cellpadding="6" class="w3-content" style="width: 100%;">    
+                <tr><td>1</td><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr>
+                <tr><td>17</td><td>19</td><td>21</td><td>23</td><td>25</td><td>27</td><td>29</td><td>31</td></tr>
+                <tr><td>33</td><td>35</td><td>37</td><td>39</td><td>41</td><td>43</td><td>45</td><td>47</td></tr>
+                <tr><td>49</td><td>51</td><td>53</td><td>55</td><td>57</td><td>59</td><td>61</td><td>63</td></tr>
+            </table>
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->  
         
-        <!-- TERCEIRA TABELA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <table cellpadding="6" class="w3-content" style="width: 100%;">    
-                        <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
-                        <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
-                        <tr><td>36</td><td>37</td><td>38</td><td>39</td><td>44</td><td>45</td><td>46</td><td>47</td></tr>
-                        <tr><td>52</td><td>53</td><td>54</td><td>55</td><td>60</td><td>61</td><td>62</td><td>63</td></tr>
-        </table>
+                        
+        <!-- SEGUNDA TABELA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <div id="tabeladois" class="normal" style="display: none;">
+            <table cellpadding="6" class="w3-content" style="width: 100%;">    
+                <tr><td>2</td><td>3</td><td>6</td><td>7</td><td>10</td><td>11</td><td>14</td><td>15</td></tr>
+                <tr><td>18</td><td>19</td><td>22</td><td>23</td><td>26</td><td>27</td><td>30</td><td>31</td></tr>
+                <tr><td>34</td><td>35</td><td>38</td><td>39</td><td>42</td><td>43</td><td>46</td><td>47</td></tr>
+                <tr><td>50</td><td>51</td><td>54</td><td>55</td><td>58</td><td>59</td><td>62</td><td>63</td></tr>
+            </table>
+        </div>
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         
+        <!-- TERCEIRA TABELA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <div id="tabelatres" class="normal" style="display: none;">
+            <table cellpadding="6" class="w3-content" style="width: 100%;">    
+                <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+                <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+                <tr><td>36</td><td>37</td><td>38</td><td>39</td><td>44</td><td>45</td><td>46</td><td>47</td></tr>
+                <tr><td>52</td><td>53</td><td>54</td><td>55</td><td>60</td><td>61</td><td>62</td><td>63</td></tr>
+            </table>
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        
+        <!-- QUARTA TABELA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <div id="tabelaquatro" class="normal" style="display: none;">
+            <table cellpadding="6" class="w3-content" style="width: 100%;">    
+                <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+                <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+                <tr><td>40</td><td>41</td><td>42</td><td>43</td><td>44</td><td>45</td><td>46</td><td>47</td></tr>
+                <tr><td>56</td><td>57</td><td>58</td><td>59</td><td>60</td><td>61</td><td>62</td><td>63</td></tr>
+            </table>
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        
+        <!-- QUINTA TABELA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <div id="tabelacinco" class="normal" style="display: none;">
+            <table cellpadding="6" class="w3-content" style="width: 100%;">    
+                <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+                <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+                <tr><td>48</td><td>49</td><td>50</td><td>51</td><td>52</td><td>53</td><td>54</td><td>55</td></tr>
+                <tr><td>56</td><td>57</td><td>58</td><td>59</td><td>60</td><td>61</td><td>62</td><td>63</td></tr>
+            </table>
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        
+        <!-- SEXTA TABELA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <div id="tabelaseis" class="normal" style="display: none;">
+            <table cellpadding="6" class="w3-content" style="width: 100%;">    
+                <tr><td>32</td><td>33</td><td>34</td><td>35</td><td>36</td><td>37</td><td>38</td><td>39</td></tr>
+                <tr><td>40</td><td>41</td><td>42</td><td>43</td><td>44</td><td>45</td><td>46</td><td>47</td></tr>
+                <tr><td>48</td><td>49</td><td>50</td><td>51</td><td>52</td><td>53</td><td>54</td><td>55</td></tr>
+                <tr><td>56</td><td>57</td><td>58</td><td>59</td><td>60</td><td>61</td><td>62</td><td>63</td></tr>
+            </table>
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->  
+        
+        <!-- TABELA RESULTADO - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <div id="tabelaresultado" class="normal w3-center" style="display: none;">
+            <div id="calculando">
+                <div class="w3-hide-large w3-hide-medium Pequeno"><h2>Lendo a sua mente ...</h2></div>
+                <div class="w3-hide-small Grande"><h2>Calculando resultados ...<br/>Lendo a sua mente ...</h2></div><br/>
+                <p><i class="fa fa-spinner w3-spin w3-center" style="font-size:64px"></i></p>
+            </div>
+            <div id="mostraResultado" class="entrarTabela" style="display: none;">
+                <div class="w3-hide-large w3-hide-medium Pequeno"><h2>O número que você pensoi foi ...</h2></div>
+                <div class="w3-hide-small Grande"><h2>Consegui ler a sua mente !<br/>O número que você pensoi foi ...</h2></div><br/>
+            </div>
+            <h1><div id="resultado" class="entrarTabela" style="font-size: 64px; display: none;">-</div></h1>
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->  
+        
+        <!-- BOTOES - RODAPÉ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <div class="w3-hide-small Grande"><br/><br/></div>
-        <footer>
-            <div class="w3-row">
+        <footer id="rodape" style="display: none;">
+            <div class="w3-row w3-animate-bottom">
                 <div class="w3-third w3-padding w3-btn w3-ripple botoes">Não esta</div>
-                <div class="w3-third w3-padding w3-btn w3-ripple botoes">SIM! Esta !</div>
+                <div id="btnAfirmar" class="w3-third w3-padding w3-btn w3-ripple botoes" onclick="afirmativo()">SIM! Esta !</div>
                 <div class="w3-third w3-padding w3-btn w3-ripple botoes"> ❮ ❮  Voltar </div> 
-            
             </div>            
         </footer>
-
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     
-    </div>
+    </div> <!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     
-    	
+    <!-- SCRIPTS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    
+    <!-- DIGITAÇÃO DO CABEÇALHO  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<script type="text/javascript">
 		var div = document.getElementById('cabeca');
-		var texto = 'Adivinhação!';
+		var texto = 'divinhação!';
 
 		function escrever(str, el) {
 		var char = str.split('').reverse();
@@ -159,6 +282,115 @@
 		}
 	   escrever(texto, div);
 	</script>
+   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+   
+   <!-- TABELAS  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+   <script type="text/javascript">
+        var slide = 0;
+        var numero = 0;
+        function afirmativo () {
+            switch (slide) {
+                case 0:
+                    function somezero () {
+                        document.getElementById("tabelazero").style.display = 'none';
+                        document.getElementById("tabelaum").style.display = 'block';
+                        document.getElementById("tabelaum").className = "entrarTabela";    
+                    }
+                    document.getElementById("tabelazero").className = "sairTabela";
+                    document.getElementById("inicio").style.display = 'block';
+                    document.getElementById("rodape").style.display = 'block';
+                    setTimeout(somezero, 2000);
+                    slide = 1;     
+                    break;
+                case 1:
+                    numero = parseInt(numero)+1;
+                    function someum () {
+                        document.getElementById("tabelaum").style.display = 'none';
+                        document.getElementById("tabeladois").style.display = 'block';
+                        document.getElementById("tabeladois").className = "entrarTabela";    
+                    }
+                    document.getElementById("tabelaum").className = "sairTabela";
+                    setTimeout(someum, 2000);
+                    slide = 2;
+                    break;
+                case 2:
+                    numero = parseInt(numero)+2;
+                    function somedois () {
+                        document.getElementById("tabeladois").style.display = 'none';
+                        document.getElementById("tabelatres").style.display = 'block';
+                        document.getElementById("tabelatres").className = "entrarTabela";    
+                    }
+                    document.getElementById("tabeladois").className = "sairTabela";
+                    setTimeout(somedois, 2000);
+                    slide = 3;
+                    break;
+                case 3:
+                    numero = parseInt(numero)+4;
+                    function sometres () {
+                        document.getElementById("tabelatres").style.display = 'none';
+                         document.getElementById("tabelaquatro").style.display = 'block';
+                        document.getElementById("tabelaquatro").className = "entrarTabela"; 
+                    }
+                    document.getElementById("tabelatres").className = "sairTabela";
+                    setTimeout(sometres, 2000);
+                    slide = 4;
+                    break;
+                case 4:
+                    numero = parseInt(numero)+8;
+                    function somequatro () {
+                        document.getElementById("tabelaquatro").style.display = 'none';
+                        document.getElementById("tabelacinco").style.display = 'block';
+                        document.getElementById("tabelacinco").className = "entrarTabela";    
+                    }
+                    document.getElementById("tabelaquatro").className = "sairTabela";
+                    setTimeout(somequatro, 2000);
+                    slide = 5;
+                    break;
+                case 5:
+                    numero = parseInt(numero)+16;
+                    function somecinco () {
+                        document.getElementById("tabelacinco").style.display = 'none';
+                        document.getElementById("tabelaseis").style.display = 'block';
+                        document.getElementById("tabelaseis").className = "entrarTabela";    
+                    }
+                    document.getElementById("tabelacinco").className = "sairTabela";
+                    setTimeout(somecinco, 2000);
+                    //document.getElementById("btnAfirmar").innerHTML = "Adivinhar!";
+                    slide = 6;
+                    break;
+                case 6:
+                    numero = parseInt(numero)+32;
+                    slide = 7;
+                    function someseis () {
+                        afirmativo();
+                    }
+                    document.getElementById("tabelaseis").style.display = 'none';
+                    document.getElementById("tabelaresultado").style.display = 'block';
+                    document.getElementById("tabelaresultado").className = "entrarTabela"; 
+                    document.getElementById("tabelaseis").className = "sairTabela";
+                    document.getElementById("inicio").style.display = 'none';
+                    document.getElementById("rodape").style.display = 'none';
+                    setTimeout(someseis, 3000);
+                    break;
+                case 7:
+                    function mostrarResultado () {
+                        document.getElementById("calculando").style.display = 'none';
+                        document.getElementById("cabeca").innerHTML = "Adivinhei?";
+                        document.getElementById("mostraResultado").style.display = 'block';
+                        document.getElementById("resultado").style.display = 'block';
+                        document.getElementById("resultado").innerHTML = numero;
+                    }
+                    document.getElementById("calculando").className = "desaparecer";
+                    setTimeout(mostrarResultado, 1000);
+                    break;
+                default:
+                    alert ("teste final");
+            }
+            
+            
+            
+        }
+    </script>
     
 </body>
 </html>
