@@ -165,7 +165,7 @@
                 <p>É bem simples e fácil, basta pensar em um número de 0 a 63.</p>
                 <p>Já pensou em um número ?</p><br/><br/>
             </div>
-            <div class="w3-padding w3-btn w3-ripple botoes" onclick="afirmativo()" style="width: 80%"><b>Ja Pensei no número!</b></div>
+            <div class="w3-padding w3-btn w3-ripple botoes" onclick="selecao(8)" style="width: 80%"><b>Ja Pensei no número!</b></div>
      
         </div>
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --> 
@@ -256,8 +256,8 @@
         <div class="w3-hide-small Grande"><br/><br/></div>
         <footer id="rodape" style="display: none;">
             <div class="w3-row w3-animate-bottom">
-                <div class="w3-third w3-padding w3-btn w3-ripple botoes">Não esta</div>
-                <div id="btnAfirmar" class="w3-third w3-padding w3-btn w3-ripple botoes" onclick="afirmativo()">SIM! Esta !</div>
+                <div id="btnNegar" class="w3-third w3-padding w3-btn w3-ripple botoes" onclick="selecao(0)">Não esta</div>
+                <div id="btnAfirmar" class="w3-third w3-padding w3-btn w3-ripple botoes" onclick="selecao(1)">SIM! Esta !</div>
                 <div class="w3-third w3-padding w3-btn w3-ripple botoes"> ❮ ❮  Voltar </div> 
             </div>            
         </footer>
@@ -271,7 +271,6 @@
 	<script type="text/javascript">
 		var div = document.getElementById('cabeca');
 		var texto = 'divinhação!';
-
 		function escrever(str, el) {
 		var char = str.split('').reverse();
 		var typer = setInterval(function() {
@@ -288,82 +287,61 @@
    <script type="text/javascript">
         var slide = 0;
         var numero = 0;
-        function afirmativo () {
+        function selecao (x) {
+            opcao = x;
             switch (slide) {
                 case 0:
-                    function somezero () {
-                        document.getElementById("tabelazero").style.display = 'none';
-                        document.getElementById("tabelaum").style.display = 'block';
-                        document.getElementById("tabelaum").className = "entrarTabela";    
-                    }
                     document.getElementById("tabelazero").className = "sairTabela";
                     document.getElementById("inicio").style.display = 'block';
                     document.getElementById("rodape").style.display = 'block';
-                    setTimeout(somezero, 2000);
+                    setTimeout(somezero, 1000);
                     slide = 1;     
                     break;
                 case 1:
-                    numero = parseInt(numero)+1;
-                    function someum () {
-                        document.getElementById("tabelaum").style.display = 'none';
-                        document.getElementById("tabeladois").style.display = 'block';
-                        document.getElementById("tabeladois").className = "entrarTabela";    
+                    if(opcao==1){
+                        numero = parseInt(numero)+1;    
                     }
                     document.getElementById("tabelaum").className = "sairTabela";
-                    setTimeout(someum, 2000);
+                    setTimeout(someum, 1000);
                     slide = 2;
                     break;
                 case 2:
-                    numero = parseInt(numero)+2;
-                    function somedois () {
-                        document.getElementById("tabeladois").style.display = 'none';
-                        document.getElementById("tabelatres").style.display = 'block';
-                        document.getElementById("tabelatres").className = "entrarTabela";    
+                    if(opcao==1){
+                        numero = parseInt(numero)+2;
                     }
                     document.getElementById("tabeladois").className = "sairTabela";
-                    setTimeout(somedois, 2000);
+                    setTimeout(somedois, 1000);
                     slide = 3;
                     break;
                 case 3:
-                    numero = parseInt(numero)+4;
-                    function sometres () {
-                        document.getElementById("tabelatres").style.display = 'none';
-                         document.getElementById("tabelaquatro").style.display = 'block';
-                        document.getElementById("tabelaquatro").className = "entrarTabela"; 
+                    if(opcao==1){
+                        numero = parseInt(numero)+4;
                     }
                     document.getElementById("tabelatres").className = "sairTabela";
-                    setTimeout(sometres, 2000);
+                    setTimeout(sometres, 1000);
                     slide = 4;
                     break;
                 case 4:
-                    numero = parseInt(numero)+8;
-                    function somequatro () {
-                        document.getElementById("tabelaquatro").style.display = 'none';
-                        document.getElementById("tabelacinco").style.display = 'block';
-                        document.getElementById("tabelacinco").className = "entrarTabela";    
+                    if(opcao==1){
+                        numero = parseInt(numero)+8;
                     }
                     document.getElementById("tabelaquatro").className = "sairTabela";
-                    setTimeout(somequatro, 2000);
+                    setTimeout(somequatro, 1000);
                     slide = 5;
                     break;
                 case 5:
-                    numero = parseInt(numero)+16;
-                    function somecinco () {
-                        document.getElementById("tabelacinco").style.display = 'none';
-                        document.getElementById("tabelaseis").style.display = 'block';
-                        document.getElementById("tabelaseis").className = "entrarTabela";    
+                    if(opcao==1){
+                        numero = parseInt(numero)+16;
                     }
                     document.getElementById("tabelacinco").className = "sairTabela";
-                    setTimeout(somecinco, 2000);
-                    //document.getElementById("btnAfirmar").innerHTML = "Adivinhar!";
+                    setTimeout(somecinco, 1000);
                     slide = 6;
                     break;
                 case 6:
-                    numero = parseInt(numero)+32;
-                    slide = 7;
-                    function someseis () {
-                        afirmativo();
+                    if(opcao==1){
+                        numero = parseInt(numero)+32;
                     }
+                    slide = 7;
                     document.getElementById("tabelaseis").style.display = 'none';
                     document.getElementById("tabelaresultado").style.display = 'block';
                     document.getElementById("tabelaresultado").className = "entrarTabela"; 
@@ -373,22 +351,52 @@
                     setTimeout(someseis, 3000);
                     break;
                 case 7:
-                    function mostrarResultado () {
-                        document.getElementById("calculando").style.display = 'none';
-                        document.getElementById("cabeca").innerHTML = "Adivinhei?";
-                        document.getElementById("mostraResultado").style.display = 'block';
-                        document.getElementById("resultado").style.display = 'block';
-                        document.getElementById("resultado").innerHTML = numero;
-                    }
                     document.getElementById("calculando").className = "desaparecer";
                     setTimeout(mostrarResultado, 1000);
                     break;
                 default:
                     alert ("teste final");
             }
-            
-            
-            
+        }
+        function somezero () {
+            document.getElementById("tabelazero").style.display = 'none';
+            document.getElementById("tabelaum").style.display = 'block';
+            document.getElementById("tabelaum").className = "entrarTabela";    
+        }
+        function someum () {
+            document.getElementById("tabelaum").style.display = 'none';
+            document.getElementById("tabeladois").style.display = 'block';
+            document.getElementById("tabeladois").className = "entrarTabela";    
+        }
+        function somedois () {
+            document.getElementById("tabeladois").style.display = 'none';
+            document.getElementById("tabelatres").style.display = 'block';
+            document.getElementById("tabelatres").className = "entrarTabela";    
+        }
+        function sometres () {
+            document.getElementById("tabelatres").style.display = 'none';
+            document.getElementById("tabelaquatro").style.display = 'block';
+            document.getElementById("tabelaquatro").className = "entrarTabela"; 
+        }
+        function somequatro () {
+            document.getElementById("tabelaquatro").style.display = 'none';
+            document.getElementById("tabelacinco").style.display = 'block';
+            document.getElementById("tabelacinco").className = "entrarTabela";    
+        }
+        function somecinco () {
+            document.getElementById("tabelacinco").style.display = 'none';
+            document.getElementById("tabelaseis").style.display = 'block';
+            document.getElementById("tabelaseis").className = "entrarTabela";    
+        }
+        function someseis () {
+            selecao();
+        }
+        function mostrarResultado () {
+            document.getElementById("calculando").style.display = 'none';
+            document.getElementById("cabeca").innerHTML = "Adivinhei?";
+            document.getElementById("mostraResultado").style.display = 'block';
+            document.getElementById("resultado").style.display = 'block';
+            document.getElementById("resultado").innerHTML = numero;
         }
     </script>
     
