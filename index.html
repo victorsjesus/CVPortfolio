@@ -7,6 +7,9 @@
     <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="icon" href=".\imgs\favicon_magica.gif" type="image/gif" sizes="16x16">
+    
     <title>Magica !</title>
     
     <!-- ### CSS ### -->
@@ -158,11 +161,11 @@
         <div id="tabelazero" class="w3-animate-zoom" style="width: 100%;">
             <div class="w3-hide-large w3-hide-medium Pequeno">
                 <p>Este site irá adivinhar o número que você estará pensando!</p>
-                <p>Basta pensar em um número de 0 a 63.</p>
+                <p>Basta pensar em um número positivo e inteiro de <b>0</b> a <b>63</b>.</p>
             </div>
             <div class="w3-hide-small Grande">
                 <p>Este site irá adivinhar o número que você estará pensando!</p>
-                <p>É bem simples e fácil, basta pensar em um número de 0 a 63.</p>
+                <p>É bem simples e fácil, basta pensar em um número positivo e inteiro de <b>0</b> a <b>63</b>.</p>
                 <p>Já pensou em um número ?</p><br/><br/>
             </div>
             <div class="w3-padding w3-btn w3-ripple botoes" onclick="selecao(8)" style="width: 80%"><b>Ja Pensei no número!</b></div>
@@ -246,7 +249,7 @@
             </div>
             <div id="mostraResultado" class="entrarTabela" style="display: none;">
                 <div class="w3-hide-large w3-hide-medium Pequeno"><h2>O número que você pensoi foi ...</h2></div>
-                <div class="w3-hide-small Grande"><h2>Consegui ler a sua mente !<br/>O número que você pensoi foi ...</h2></div><br/>
+                <div class="w3-hide-small Grande"><h2>Consegui ler a sua mente !<br/>O número que você pensou foi ...</h2></div><br/>
             </div>
             <h1><div id="resultado" class="entrarTabela" style="font-size: 64px; display: none;">-</div></h1>
         </div>
@@ -256,9 +259,11 @@
         <div class="w3-hide-small Grande"><br/><br/></div>
         <footer id="rodape" style="display: none;">
             <div class="w3-row w3-animate-bottom">
-                <div id="btnNegar" class="w3-third w3-padding w3-btn w3-ripple botoes" onclick="selecao(0)">Não esta</div>
-                <div id="btnAfirmar" class="w3-third w3-padding w3-btn w3-ripple botoes" onclick="selecao(1)">SIM! Esta !</div>
-                <div class="w3-third w3-padding w3-btn w3-ripple botoes"> ❮ ❮  Voltar </div> 
+                <div id="btnNegar" class="w3-half w3-padding w3-btn w3-ripple botoes" onclick="selecao(0)">Não esta</div>
+                <div id="btnAfirmar" class="w3-half w3-padding w3-btn w3-ripple botoes" onclick="selecao(1)">SIM! Esta !</div>
+                <div id="btnVoltar" class="w3-third w3-padding w3-btn w3-ripple botoes w3-animate-right" onclick="selecao(2)" style="display: none;">
+                     ❮ ❮  Voltar 
+                </div> 
             </div>            
         </footer>
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -287,7 +292,9 @@
    <script type="text/javascript">
         var slide = 0;
         var numero = 0;
-        function selecao (x) {
+        var A = B = C = D = E = F = 0;
+
+       function selecao (x) {
             opcao = x;
             switch (slide) {
                 case 0:
@@ -295,40 +302,80 @@
                     document.getElementById("inicio").style.display = 'block';
                     document.getElementById("rodape").style.display = 'block';
                     setTimeout(somezero, 1000);
+                    setTimeout(apareceum, 1000);
                     slide = 1;     
                     break;
                 case 1:
                     if(opcao==1){
-                        numero = parseInt(numero)+1;    
+                        numero = parseInt(numero)+1;
+                        A = 1;
                     }
                     document.getElementById("tabelaum").className = "sairTabela";
                     setTimeout(someum, 1000);
+                    setTimeout(aparecedois, 1000);
                     slide = 2;
                     break;
                 case 2:
                     if(opcao==1){
                         numero = parseInt(numero)+2;
+                        B = 2;
                     }
                     document.getElementById("tabeladois").className = "sairTabela";
                     setTimeout(somedois, 1000);
-                    slide = 3;
+                    if(opcao==2){
+                        slide = 1;
+                        numero = numero - A;
+                        A = 0;
+                        setTimeout(voltadoisum, 1000);
+                        setTimeout(apareceum, 1000);   
+                    }
+                    else{
+                        setTimeout(aparecetres, 1000);
+                        slide = 3;
+                    }
                     break;
                 case 3:
                     if(opcao==1){
                         numero = parseInt(numero)+4;
+                        C = 4;
                     }
                     document.getElementById("tabelatres").className = "sairTabela";
                     setTimeout(sometres, 1000);
+                    if(opcao==2){
+                        slide = 2;
+                        numero = numero - B;
+                        B = 0;
+                        setTimeout(aparecedois, 1000);   
+                    }
+                    else {
+                    setTimeout(aparecequatro, 1000);
                     slide = 4;
+                    }
                     break;
                 case 4:
                     if(opcao==1){
                         numero = parseInt(numero)+8;
+                        D = 8;
                     }
                     document.getElementById("tabelaquatro").className = "sairTabela";
                     setTimeout(somequatro, 1000);
+                    if(opcao==2){
+                        slide = 3;
+                        numero = numero - C;
+                        C = 0;
+                        setTimeout(aparecetres, 1000);
+                    }
+                    else {
+                    setTimeout(aparececinco, 1000);
                     slide = 5;
+                    }
                     break;
+                
+                //Repetir esquema /\acima
+                
+                
+                
+                
                 case 5:
                     if(opcao==1){
                         numero = parseInt(numero)+16;
@@ -359,29 +406,20 @@
             }
         }
         function somezero () {
-            document.getElementById("tabelazero").style.display = 'none';
-            document.getElementById("tabelaum").style.display = 'block';
-            document.getElementById("tabelaum").className = "entrarTabela";    
+            document.getElementById("tabelazero").style.display = 'none';    
         }
         function someum () {
             document.getElementById("tabelaum").style.display = 'none';
-            document.getElementById("tabeladois").style.display = 'block';
-            document.getElementById("tabeladois").className = "entrarTabela";    
+   
         }
         function somedois () {
-            document.getElementById("tabeladois").style.display = 'none';
-            document.getElementById("tabelatres").style.display = 'block';
-            document.getElementById("tabelatres").className = "entrarTabela";    
+            document.getElementById("tabeladois").style.display = 'none';    
         }
         function sometres () {
-            document.getElementById("tabelatres").style.display = 'none';
-            document.getElementById("tabelaquatro").style.display = 'block';
-            document.getElementById("tabelaquatro").className = "entrarTabela"; 
+            document.getElementById("tabelatres").style.display = 'none'; 
         }
         function somequatro () {
-            document.getElementById("tabelaquatro").style.display = 'none';
-            document.getElementById("tabelacinco").style.display = 'block';
-            document.getElementById("tabelacinco").className = "entrarTabela";    
+            document.getElementById("tabelaquatro").style.display = 'none';   
         }
         function somecinco () {
             document.getElementById("tabelacinco").style.display = 'none';
@@ -397,6 +435,36 @@
             document.getElementById("mostraResultado").style.display = 'block';
             document.getElementById("resultado").style.display = 'block';
             document.getElementById("resultado").innerHTML = numero;
+        }
+       //transformar as funções pra sumir e aparecer
+        function apareceum () {
+            document.getElementById("tabelaum").style.display = 'block';
+            document.getElementById("tabelaum").className = "entrarTabela";            
+        }
+        function aparecedois () {
+            document.getElementById("tabeladois").style.display = 'block';
+            document.getElementById("btnVoltar").style.display = 'block';
+            document.getElementById("btnAfirmar").className = document.getElementById("btnAfirmar").className.replace("w3-half","w3-third"); 
+            document.getElementById("btnNegar").className = document.getElementById("btnNegar").className.replace("w3-half","w3-third");
+            document.getElementById("tabeladois").className = "entrarTabela"; 
+        }
+        function aparecetres() {
+            document.getElementById("tabelatres").style.display = 'block';
+            document.getElementById("tabelatres").className = "entrarTabela";
+        }
+        function aparecequatro() {
+            document.getElementById("tabelaquatro").style.display = 'block';
+            document.getElementById("tabelaquatro").className = "entrarTabela";    
+        }
+        function aparececinco(){
+            document.getElementById("tabelacinco").style.display = 'block';
+            document.getElementById("tabelacinco").className = "entrarTabela"; 
+        }
+        function voltadoisum() {
+           document.getElementById("tabeladois").style.display = 'none';
+           document.getElementById("btnVoltar").style.display = 'none';
+           document.getElementById("btnAfirmar").className = document.getElementById("btnAfirmar").className.replace("w3-third","w3-half"); 
+           document.getElementById("btnNegar").className = document.getElementById("btnNegar").className.replace("w3-third","w3-half");
         }
     </script>
     
