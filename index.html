@@ -1,41 +1,407 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://www.w3schools.com/howto/tryhow_css_parallax_demo.htm -->
 <html>
-	<head>
-		<title>TITULO</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<title>TITULO=</title>
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<!-- ### CSS ### -->
+	<style rel="stylesheet" type="text/css">
+
+		body, html {
+			height: 100%;
+			margin: 0;
+			font: 400 15px/1.8 "Lato", sans-serif;
+			color: #777;
+		}
+
+		.bgimg-1, .bgimg-2, .bgimg-3 {
+			position: relative;
+			opacity: 0.65;
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
 		
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		
-		<!-- ### CSS ### -->
-		<style rel="stylesheet" type="text/css">
-			.btn-circle {
-			background-color: #99ccff;
-			height: 60px;
-			width: 60px;
-			border-radius: 50%;
-			display: flex;
-			align-items: center;
-			float: left;
-			margin: 1em;
+		.bgimg-1 {
+			background-image: url("./imgs/img-Index/bgTopo.jpg");
+			min-height: 100%;
+		}
+
+		.bgimg-2 {
+			background-image: url("./imgs/img-Index/bg2.jpeg");
+			min-height: 200px;
+		}
+
+		.bgimg-3 {
+			background-image: url("img_parallax3.jpg");
+			min-height: 400px;
+		}
+
+		.caption {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 100%;
+			text-align: center;
+			color: #000;
+		}
+
+		.caption span.border {
+			background-color: #111;
+			color: #fff;
+			padding: 18px;
+			font-size: 25px;
+			letter-spacing: 10px;
+		}
+
+		h3 {
+			letter-spacing: 5px;
+			text-transform: uppercase;
+			font: 20px "Lato", sans-serif;
+			color: #111;
+		}
+
+		/* Turn off parallax scrolling for tablets and phones */
+			@media only screen and (max-device-width: 1024px) {
+			.bgimg-1, .bgimg-2, .bgimg-3 {
+			background-attachment: scroll;
 			}
-		</style>
-	</head>
-	<body>
-		<p>
-			<div id="" class="row container-fluid w3-animate-opacity" style="margin-top: -10px;">
-				<a class="btn btn-circle" onClick='javascript:location.href="https://victorsjesus.github.io/CVPortfolio/MG.html"'>
-					<img style="height: 48px; margin-left:-5px;" src="./imgs/img-Index/Magic_icon.png" class="">
-				</a>
+		}
+	</style>
+</head>
+<body>
+	<!-- NAVBAR ====================================================================================================== -->
+	<!-- Navbar (Fixo no topo) -->
+	<div class="w3-top" style="color:white;">
+		<div class="w3-bar" id="myNavbar">
+			<a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+				<i class="fa fa-bars"></i>
+			</a>
+			<a href="#home" class="w3-bar-item w3-button">HOME</a>
+			<a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> APRESENTAÇÃO</a>
+			<a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+			<a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTATO</a>
+			<a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+				<i class="fa fa-search"></i>
+			</a>
+		</div>
+	<!-- Navbar em tela pequena -->
+		<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+			<a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">APRESENTAÇÃO</a>
+			<a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTATO</a>
+			<a href="#" class="w3-bar-item w3-button">SEARCH</a>
+		</div>
+	</div>
+	
+	<!-- PARALLAX 1 ================================================================================================== -->
+	<div class="bgimg-1">
+		<div class="caption">
+			<span class="border">SCROLL DOWN</span>
+		</div>
+	</div>
+	
+	<!-- Container (Sessão SOBRE) ==================================================================================== -->	
+	<div style="color: #777;background-color:white;text-align:center;padding:15px 5px;text-align: justify;">
+		<h3 style="text-align:center;">ABOUT ME</h3>
+		<p class="w3-center"><em>I love photography</em></p>
+	</div>
+	<!-- TELA GRANDE  -->
+	<div class="w3-content w3-container w3-hide-small" id="about">
+		<p class="w3-justify">	Parallax scrolling is a web site trend where the background content is moved at a different speed than the 
+			foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, 
+			sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis 
+			blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, 
+			curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc 
+			nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. 
+			Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem 
+			mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante 
+			augue etiam maecenas, porta porttitor placerat leo.</p>
+	</div>
+	<!-- TELA Pequena  -->
+	<div class="w3-row w3-hide-large w3-hide-medium">
+		<div class="w3-col m6 w3-center w3-padding-large">
+			<p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>
+			<img src="./imgs/img-Index/avatar.jpg" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
+		</div>
+		<div class="w3-col m6 w3-padding-large">
+			<p class="w3-justify">	Parallax scrolling is a web site trend where the background content is moved at a different speed than the 
+			foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, 
+			sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis 
+			blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, 
+			curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc 
+			nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. 
+			Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem 
+			mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante 
+			augue etiam maecenas, porta porttitor placerat leo.</p>
+		</div>
+	</div>
+	<!-- TALENTOS -->
+	<div class="w3-content w3-container">
+		<p class="w3-large w3-center w3-padding-16">Im really good at:</p>
+		<p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
+		<div class="w3-light-grey">
+			<div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
+		</div>
+		<p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
+		<div class="w3-light-grey">
+			<div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
+		</div>
+		<p class="w3-wide"><i class="fa fa-photo"></i>Photoshop</p>
+		<div class="w3-light-grey">
+			<div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+		</div>
+	</div>
+	
+	<br/><br/>
+	
+	<!-- PARALLAX 2 ================================================================================================== -->
+	<div class="bgimg-2">
+		<div class="caption">
+			<span class="border" style="background-color:transparent;font-size:25px;color: #f7;">PARALLAX 2</span>
+		</div>
+	</div>
+	
+	<!-- Container (Sessão SOBRE) ==================================================================================== -->
+	<div style="position:relative;">
+		<div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+			<p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+		</div>
+	</div>
+	
+	<!--
+	======================================================================================================================
+
+
+
+	
+	<!-- Conteúdo do CV -->
+	<div class="w3-content w3-margin-top w3-light-grey" style="max-width:1400px;">
+
+		<!-- Dividir a GRID -->
+		<div class="w3-row-padding">
+		<br/>
+			<!-- Coluna ESQUERDA -->
+			<div class="w3-third">
 				
-				<a class="btn btn-circle" onClick='javascript:location.href="https://victorsjesus.github.io/CVPortfolio/TB.html"'>
-					<img style="height: 46px; margin-left:-8px;" src="./imgs/img-Index/Tibia_icon.png" class="">
-				</a>
-			</div>
-		</p>		
-	</body>
-</html>
+				<!-- FOTO AVATAR -->
+				<div class="w3-white w3-text-grey w3-card-4">
+					<div class="w3-display-container">
+						<img src="./imgs/img-Index/avatar.jpg" style="width:100%;" alt="Avatar">
+						<div class="w3-display-bottomleft w3-container w3-text-black">
+						<h2>Avatar Site</h2>
+						</div>
+					</div>
+				<!-- Contatos -->
+				<div class="w3-container">
+					<p>
+						<p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Web Developer / Programador</p>
+						<p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>São Paulo, SP</p>
+						<p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>victorsjesus@ymail.com</p>
+						<p><i class="fa fa-skype fa-fw w3-margin-right w3-large w3-text-teal"></i>victorsjesus</p>
+						<p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+55 12 92443-5534</p>
+					</p>
+					<hr>
+
+					<p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Conhecimentos</b></p>
+					<p>Adobe Photoshop</p>
+					<div class="w3-light-grey w3-round-xlarge w3-small">
+						<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+					</div>
+					<p>Photography</p>
+					<div class="w3-light-grey w3-round-xlarge w3-small">
+						<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
+							<div class="w3-center w3-text-white">80%</div>
+						</div>
+					</div>
+					
+					
+					
+<p>Illustrator</p>
+<div class="w3-light-grey w3-round-xlarge w3-small">
+<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+</div>
+<p>Media</p>
+<div class="w3-light-grey w3-round-xlarge w3-small">
+<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
+</div>
+<br>
+
+<p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+<p>English</p>
+<div class="w3-light-grey w3-round-xlarge">
+<div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
+</div>
+<p>Spanish</p>
+<div class="w3-light-grey w3-round-xlarge">
+<div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
+</div>
+<p>German</p>
+<div class="w3-light-grey w3-round-xlarge">
+<div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
+</div>
+<br>
+</div>
+</div><br>
+
+<!-- End Left Column -->
+</div>
+
+<!-- Right Column -->
+<div class="w3-twothird">
+
+<div class="w3-container w3-card w3-white w3-margin-bottom">
+<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+<div class="w3-container">
+<h5 class="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
+<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+<p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+<hr>
+</div>
+<div class="w3-container">
+<h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
+<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
+<p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+<hr>
+</div>
+<div class="w3-container">
+<h5 class="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
+<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
+</div>
+</div>
+
+<div class="w3-container w3-card w3-white">
+<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+<div class="w3-container">
+<h5 class="w3-opacity"><b>W3Schools.com</b></h5>
+<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
+<p>Web Development! All I need to know in one place</p>
+<hr>
+</div>
+<div class="w3-container">
+<h5 class="w3-opacity"><b>London Business School</b></h5>
+<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
+<p>Master Degree</p>
+<hr>
+</div>
+<div class="w3-container">
+<h5 class="w3-opacity"><b>School of Coding</b></h5>
+<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
+<p>Bachelor Degree</p><br>
+</div>
+</div>
+
+<!-- End Right Column -->
+</div>
+
+<!-- End Grid -->
+</div>
+
+<!-- End Page Container -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+<div class="bgimg-3">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+    <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+  </div>
+</div>
+
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border">COOL!</span>
+  </div>
+</div>
+
+	<footer class="w3-container w3-gray w3-center w3-justify w3-margin-top">
+		<p>Find me on social media.</p>
+		<p style="font-size:20px;">
+			<i class="fa fa-facebook-official w3-hover-opacity"></i>
+			<i class="fa fa-instagram w3-hover-opacity"></i>
+			<i class="fa fa-snapchat w3-hover-opacity"></i>
+			<i class="fa fa-pinterest-p w3-hover-opacity"></i>
+			<i class="fa fa-twitter w3-hover-opacity"></i>
+			<i class="fa fa-linkedin w3-hover-opacity"></i>
+		</p>
+		<p></p>
+	</footer>
+
+	<script>
+		// Change style of navbar on scroll
+		window.onscroll = function() {myFunction()};
+		function myFunction() {
+			var navbar = document.getElementById("myNavbar");
+			if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+			navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+			} else {
+				navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+			}
+		}
+		
+		// Used to toggle the menu on small screens when clicking on the menu button
+		function toggleFunction() {
+		var x = document.getElementById("navDemo");
+			if (x.className.indexOf("w3-show") == -1) {
+			x.className += " w3-show";
+			} else {
+			x.className = x.className.replace(" w3-show", "");
+			}
+		}
+	</script>
+
+</body></html>
