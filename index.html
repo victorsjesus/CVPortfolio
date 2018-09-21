@@ -16,7 +16,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 			
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -93,6 +95,19 @@
 			background-attachment: scroll;
 			}
 		}
+		
+		#avatar2 {
+			width:100%;
+			height:400px; 
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+		
+		#sociais > a:link {
+			font-size:20px;
+			color: black;
+			text-decoration:none;
+		}
+		
 		<!-- TIMELINE -->
 		<!-- ================================================================================================== -->
 		.btn-circle {
@@ -364,50 +379,50 @@
 			height: 2.6em;
 			position: relative;
 		}
-  .dpad-pane:before, .dpad-pane:after {
-    content: "";
-    background-color: #ddd;
-    width: 100%;
-    height: 280%;
-    position: absolute;
-    top: -94%;
-    left: 0;
-    border-radius: .3em;
-  }
-    .dpad-hole:before, .dpad-hole:after {
-      content: "";
-      background-color: #000;
-      margin: 7%;
-      width: 86%;
-      height: 265%;
-      position: absolute;
-      top: -93%;
-      left: 0;
-      border-radius: .2em;
-      z-index: 1;
-    }
-    .dpad-pane:after, .dpad-hole:after  {
-      transform: rotate(90deg);
-    }
-    #dpad {
-      position: relative;
-      z-index: 1;
-      top: -.006em;
-      left: -.1em;
-    }
-    #dpad:after { /* dpad-pit */
-      content: "";
-      position: absolute;
-      z-index: 1;
-      width: 1.2em;
-      height: 1.2em;
-      margin: .4em .5em;
-      border-radius: 1em;
-      background: -webkit-radial-gradient(76% 63%, circle closest-corner, hsla(0, 0%, 60%, 0.45), hsla(0, 0%, 10%, 1) 100%);
-      background: -moz-radial-gradient(76% 63%, circle closest-corner, hsla(0, 0%, 60%, 0.45), hsla(0, 0%, 10%, 1) 100%);
-      background: radial-gradient(76% 63%, circle closest-corner, hsla(0, 0%, 60%, 0.45), hsla(0, 0%, 10%, 1) 100%);
-      box-shadow: -3px -2px 4px -1px #444444 inset /* scalable units did not work well across browsers */;
-    }
+		.dpad-pane:before, .dpad-pane:after {
+			content: "";
+			background-color: #ddd;
+			width: 100%;
+			height: 280%;
+			position: absolute;
+			top: -94%;
+			left: 0;
+			border-radius: .3em;
+		}
+		.dpad-hole:before, .dpad-hole:after {
+			content: "";
+			background-color: #000;
+			margin: 7%;
+			width: 86%;
+			height: 265%;
+			position: absolute;
+			top: -93%;
+			left: 0;
+			border-radius: .2em;
+			z-index: 1;
+		}
+		.dpad-pane:after, .dpad-hole:after  {
+			transform: rotate(90deg);
+		}
+		#dpad {
+			position: relative;
+			z-index: 1;
+			top: -.006em;
+			left: -.1em;
+		}
+		#dpad:after { /* dpad-pit */
+			content: "";
+			position: absolute;
+			z-index: 1;
+			width: 1.2em;
+			height: 1.2em;
+			margin: .4em .5em;
+			border-radius: 1em;
+			background: -webkit-radial-gradient(76% 63%, circle closest-corner, hsla(0, 0%, 60%, 0.45), hsla(0, 0%, 10%, 1) 100%);
+			background: -moz-radial-gradient(76% 63%, circle closest-corner, hsla(0, 0%, 60%, 0.45), hsla(0, 0%, 10%, 1) 100%);
+			background: radial-gradient(76% 63%, circle closest-corner, hsla(0, 0%, 60%, 0.45), hsla(0, 0%, 10%, 1) 100%);
+			box-shadow: -3px -2px 4px -1px #444444 inset /* scalable units did not work well across browsers */;
+		}
     #dpad.up {
       transform: rotate(.4deg) scaleY(0.98);
       margin-top: .05em;
@@ -678,7 +693,7 @@
 	<!-- TELA Pequena  -->
 	<div class="w3-row w3-hide-large w3-hide-medium">
 		<div class="w3-col m6 w3-center w3-padding-large">
-			<p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>
+			<p><b><i class="fa fa-user w3-margin-right"></i>Esse sou eu</b></p><br>
 			<img src="./imgs/img-Index/avatar.jpg" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
 		</div>
 		<div class="w3-col m6 w3-padding-large">
@@ -724,7 +739,7 @@
 	<!-- Container =================================================================================================== -->
 	<div style="position:relative;">
 		<div style="color:#ddd;background-color:#282E34;text-align:center;padding:20px 30px;text-align: justify;">
-			<p>Atuo na área de Informática a mais de 10 Anos. Desde lecionando até Suporte e Desenvolvimento de Sistemas.</p>
+			<p>Atuo na área de Informática a mais de 10 anos. Desde lecionando até trabalhando com Suporte e Desenvolvimento de Sistemas.</p>
 		</div>
 	</div>
 	
@@ -841,13 +856,15 @@
 					<div class="w3-container">
 						<h5 class="w3-opacity"><b>DIGISYSTEM<br/>Analista de Suporte - Front End Developer</b></h5>
 						<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Out 2017 - <span class="w3-tag w3-teal w3-round">Atual</span></h6>
-						<p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+						<p>	Prestação suporte a clientes SESI / SENAI / SEBRAE analisando o código dos sistemas desenvolvidos em C# e
+							corrigindo as devidas falhas. Desenvolvimento Web da Base de Conhecimento (HTML / CSS / JavaScript) – Front End.
+							Prestação de suporte remoto e in loco. Aplicação da metodologia ITIL na equipe.</p>
 						<hr>
 					</div>
 					<div class="w3-container">
-						<h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
-						<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
-						<p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+						<h5 class="w3-opacity"><b>Microsoft Answer Desk Support - Teleperformance<br/>Analista de Suporte (Answer Desk CS3)</b></h5>
+						<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i> Ago 2015 – Ago 2017</h6>
+						<p>	Prestação suporte a clientes Microsoft por meio telefônico e acesso remoto.</p>
 						<hr>
 					</div>
 					<div class="w3-container">
@@ -1134,8 +1151,12 @@
 						</section>
 					</figure> <!-- FIM GAMEPAD ========================================== -->
 					<br><br><br>
-					<div class="w3-display-container w3-footer">
+					<div class="w3-display-container w3-footer"  style="margin-top:-40px;">
 						<b style="font-size: 16px; color: white;">Insira o código <em>"KONAMI"</em>.</b>
+						<div class="w3-light-grey w3-round-xxlarge w3-hide-small" style="height:36px;">
+							<div class="w3-container w3-center w3-round-xxlarge w3-light-grey" style="width:100%;">.</div>
+						</div>
+						<div class="w3-hide-small"><br/></div>
 						<div class="w3-light-grey w3-round-xlarge w3-small">
 							<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:85%">85%</div>
 						</div>
@@ -1187,24 +1208,70 @@
 <div style="position:relative;">
   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
     <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+	<!-- Container (Sessão SITES CONSTRUIDOS) ==================================================================================== -->
+		<p>
+			<div id="" class="row container-fluid w3-animate-opacity" style="margin-top: -10px;">
+				<a class="btn btn-circle" onClick='javascript:location.href="https://victorsjesus.github.io/CVPortfolio/MG.html"'>
+					<img style="height: 48px; margin-left:-5px;" src="./imgs/img-Index/Magic_icon.png" class="">
+				</a>
+				
+				<a class="btn btn-circle" onClick='javascript:location.href="https://victorsjesus.github.io/CVPortfolio/TB.html"'>
+					<img style="height: 46px; margin-left:-8px;" src="./imgs/img-Index/Tibia_icon.png" class="">
+				</a>
+			</div>
+		</p>
+	
   </div>
 </div>
 
-<div class="bgimg-1">
-  <div class="caption">
-    <span class="border">COOL!</span>
-  </div>
-</div>
+	<div class="bgimg-1">
+		<br>
+		<!-- Container (Contact Section) -->
+		<div class="w3-content w3-container w3-round-xxlarge w3-white w3-padding-16" id="contact">
+			<h3 class="w3-center">ENTRE EM CONTATO!</h3>
+			<p class="w3-center"><em>Aguardo seu feedback!</em></p>
+
+			<div class="w3-row w3-padding-16 w3-section w3-round-xxlarge">
+				<div class="w3-col m4 w3-container">
+					<!-- Foto Avatar2 -->
+					<div id="avatar2" class="w3-round-large w3-light-grey"></div>
+				</div>
+				<div class="w3-col m8 w3-panel">
+					<div class="w3-large w3-margin-bottom">
+						<i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> São Paulo, SP<br>
+						<i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +55 11 9153-1052<br>
+						<i class="fa fa-skype fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Skype: victorsjesus<br>
+						<i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: victorsjesus@ymail.com<br>
+					</div>
+					<p>Vamos marcar de tomar um <i class="fa fa-coffee"></i> café. Deixe um recado ;)</p>
+					<form action="/action_page.php" target="_blank">
+						<div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+							<div class="w3-half">
+								<input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+							</div>
+							<div class="w3-half">
+								<input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+							</div>
+						</div>
+						<input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+						<button class="w3-button w3-black w3-right w3-section" type="submit">
+							<i class="fa fa-paper-plane"></i> ENVIAR MENSAGEM
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<footer class="w3-container w3-gray w3-center w3-justify">
-		<p>Encontre-me nas redes sociais.</p>
-		<p style="font-size:20px;">
-			<i class="fa fa-facebook-official w3-hover-opacity"></i>
-			<i class="fa fa-instagram w3-hover-opacity"></i>
-			<i class="fa fa-snapchat w3-hover-opacity"></i>
-			<i class="fa fa-pinterest-p w3-hover-opacity"></i>
-			<i class="fa fa-twitter w3-hover-opacity"></i>
-			<i class="fa fa-linkedin w3-hover-opacity"></i>
+		Encontre-me nas redes sociais.
+		<p id="sociais">
+			<a href="https://www.facebook.com/victorsjesus" TARGET="_blank"><i class="fa fa-facebook-official w3-hover-blue"></i></a>
+			<i class="fa fa-instagram w3-hover-opacity" style="cursor:pointer;"></i></a>
+			<i class="fa fa-snapchat w3-hover-opacity" style="cursor:pointer;"></i>
+			<i class="fa fa-pinterest-p w3-hover-opacity" style="cursor:pointer;"></i>
+			<i class="fa fa-twitter w3-hover-opacity" style="cursor:pointer;"></i>
+			<i class="fa fa-linkedin w3-hover-opacity" style="cursor:pointer;"></i>
 		</p>
 		<p></p>
 	</footer>
