@@ -650,7 +650,7 @@
 	<!-- PARALLAX 1 ================================================================================================== -->
 	<div class="bgimg-1" id="home">
 		<div class="caption">
-			<span class="border w3-hide-large w3-hide-medium" style="font-size: 20px;">VICTOR S JESUS<br/></span> <!-- Tela pequena -->
+			<span class="border w3-hide-large w3-hide-medium" style="font-size: 15px;">VICTOR S JESUS<br/></span> <!-- Tela pequena -->
 			<span class="border w3-hide-small">VICTOR S JESUS<br/></span> <!-- Tela grande -->
 			<em style="font-size: 20px; font-style:italic;text-align: justify; color:white;">Apresentação Profissional</em>
 		</div>
@@ -1086,58 +1086,62 @@
 
 <div>
 	Teste para GAMEPAD para empresa de jogos:
-	<a onclick="document.getElementById('controleModal').style.display='block'" class="w3-text-teal"><i class="fa fa-gamepad" style="font-size:30px;"></i></a>
+	<a onclick="document.getElementById('controleModal').style.display='block'" class="w3-text-teal">
+		<i class="fa fa-gamepad w3-hover-text-black" style="font-size:30px; cursor:pointer;"></i>
+	</a>
+	<br/> CLIQUE SE VC É GAMER \,,/
+</div>
 	<!-- Modal -->
 	<div id="controleModal" class="w3-modal">
-		<div id="modalPad"> <!-- VERIFICA SE GIRA A TELA [<600 PX] -->
-			<div class="w3-modal-content w3-animate-top" style="width:600px; height:450px; background-color:transparent;">
+		<div id="modalPad" class="w3-mobile"> <!-- VERIFICA SE GIRA A TELA [<600 PX] -->
+			<div id= "bkgModalControle" class="w3-modal-content w3-animate-top" style="background-color:transparent;">
 				<div class="w3-container">
 					<span onclick='$("#controleModal").fadeOut();' class="w3-button w3-round-xlarge w3-blue-gray w3-hover-teal w3-display-topright" style="color:black;">
 						FECHAR &times;
 					</span>
-				<!-- <img src="./imgs/img-Index/controleXBox.png" alt="Controle_XBOX" height="400" width="400">  -->
-				<br/><br/>
-				<!-- GAMEPAD ========================================== -->
-				<figure id="nespad">
-					<section class="dpad-pane">
-						<div class="dpad-hole"></div>
-						<div id="dpad">
-							<canvas height="150" id="dpad-body" width="150"></canvas>
-							<button class="button" id="up"></button>
-							<button class="button" id="right"></button>
-							<button class="button" id="down"></button>
-							<button class="button" id="left"></button>
+					<!-- <img src="./imgs/img-Index/controleXBox.png" alt="Controle_XBOX" height="400" width="400">  -->
+					<br/><br/>
+					<!-- GAMEPAD ========================================== -->
+					<figure id="nespad">
+						<section class="dpad-pane">
+							<div class="dpad-hole"></div>
+							<div id="dpad">
+								<canvas height="150" id="dpad-body" width="150"></canvas>
+								<button class="button" id="up"></button>
+								<button class="button" id="right"></button>
+								<button class="button" id="down"></button>
+								<button class="button" id="left"></button>
+							</div>
+						</section>
+						<section class="menu-pane">
+							<div class="labels">
+								<label class="select" for="select">Select</label>
+								<label class="start" for="start">Start</label>
+							</div>
+							<div class="buttons">
+							<button class="button select" id="select" onclick="javascript:alert('SELECT');">Select</button>
+							<button class="button start" id="start">Start</button>
+							</div>
+						</section>
+						<section class="action-pane">
+							<div class="logo">
+								Nintendo
+							</div>
+							<div class="buttons">
+								<label class="label">B<button class="button" id="b"></button></label>
+								<label class="label">A<button class="button" id="a"></button></label>
+							</div>
+						</section>
+					</figure> <!-- FIM GAMEPAD ========================================== -->
+					<br><br><br>
+					<div class="w3-display-container w3-footer">
+						<b style="font-size: 16px; color: white;">Insira o código <em>"KONAMI"</em>.</b>
+						<div class="w3-light-grey w3-round-xlarge w3-small">
+							<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:85%">85%</div>
 						</div>
-					</section>
-					<section class="menu-pane">
-						<div class="labels">
-							<label class="select" for="select">Select</label>
-							<label class="start" for="start">Start</label>
-						</div>
-						<div class="buttons">
-						<button class="button select" id="select" onclick="javascript:alert('SELECT');">Select</button>
-						<button class="button start" id="start">Start</button>
-						</div>
-					</section>
-					<section class="action-pane">
-						<div class="logo">
-							Nintendo
-						</div>
-						<div class="buttons">
-							<label class="label">B<button class="button" id="b"></button></label>
-							<label class="label">A<button class="button" id="a"></button></label>
-						</div>
-					</section>
-				</figure> <!-- FIM GAMEPAD ========================================== -->
-				
-				<div class="w3-display-container w3-display-bottommiddle">
-				
-					<b style="font-size: 16px; color: white;">Insira o código <em>"KONAMI"</em>.</b>
-					<div class="w3-light-grey w3-round-xlarge w3-small">
-						<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:85%">85%</div>
+						<br/>
 					</div>
 				</div>
-			</div>
 			
 			<!-- TELA pequena -->
 			<!-- <div class="w3-container" style="width:400px; height:400px;"> -->
@@ -1154,11 +1158,11 @@
 
 
 			</div>
-			</div>
 		</div>
-		<br/> CLIQUE SE VC É GAMER \,,/
 	</div>
-</div>
+		
+	
+
 <br/><br/>
 
 
@@ -1323,7 +1327,7 @@
 			plus.fill();
 		}());
 		
-	<!-- REDIMENSIONAR e GIRAR GAMEPAD SE TELA <600px =============== -->
+	<!-- REDIMENSIONAR e GIRAR GAMEPAD SE TELA <768px =============== -->
 		//var $element = $("modalPad");
 		$(window).resize(function(){
 			//seu código aqui
@@ -1331,12 +1335,12 @@
 			if (window.innerWidth < 600) {
 				//$element.addClass("gamepadInverse");
 				document.getElementById("modalPad").className = "gamepadInverse";
-				alert("pequeno");
+				document.getElementById("bkgModalControle").style.transform = "scale(0.7,0.7)";
 			/* Acima de 768px, se existir a classe navbar-inverse ela é retirada*/
 			} else {
 				//$element.removeClass("gamepadInverse");
 				document.getElementById("modalPad").className = document.getElementById("modalPad").className.replace("gamepadInverse"," ");
-				alert("grande");
+				document.getElementById("bkgModalControle").style.transform = "scale(1,1)";
 			}
 		}).trigger("resize");
 		
