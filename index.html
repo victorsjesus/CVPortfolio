@@ -57,7 +57,7 @@
 
 		.bgimg-3 {
 			background-image: url("./imgs/img-Index/bg3.jpeg");
-			min-height: 400px;
+			min-height: 250px;
 		}
 
 		.caption {
@@ -106,6 +106,36 @@
 			font-size:20px;
 			color: black;
 			text-decoration:none;
+		}
+		
+		.div-circle {
+			background-color: gray;
+			height: 40px;
+			width: 40px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			float: left;
+			margin: 3px;
+		}
+		
+		.btn-circle {
+			background-color: #99ccff;
+			height: 60px;
+			width: 60px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			float: left;
+			margin: 3px;
+		}
+		
+		.sites {
+			width:100px; 
+			float:left; 
+			margin-left: 1em;
+			text-align: justify;
+			cursor:pointer;
 		}
 		
 		<!-- TIMELINE -->
@@ -1153,8 +1183,13 @@
 					<br><br><br>
 					<div class="w3-display-container w3-footer"  style="margin-top:-40px;">
 						<b style="font-size: 16px; color: white;">Insira o código <em>"KONAMI"</em>.</b>
-						<div class="w3-light-grey w3-round-xxlarge w3-hide-small" style="height:36px;">
-							<div class="w3-container w3-center w3-round-xxlarge w3-light-grey" style="width:100%;">.</div>
+						<div class="w3-light-grey w3-round-xxlarge w3-hide-small" style="height:46px;">
+							<div class="w3-container w3-center w3-round-xxlarge w3-light-grey" style="height:46px; width:100%;">
+								<div class="btn div-circle">
+									<img style="height: 36px; margin-left:-6px;" src="./imgs/img-Index/CONTROL-UP.png">
+									<!-- site da imagem: https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Konami-code.svg/1280px-Konami-code.svg.png -->
+								</div>
+							</div>
 						</div>
 						<div class="w3-hide-small"><br/></div>
 						<div class="w3-light-grey w3-round-xlarge w3-small">
@@ -1201,25 +1236,38 @@
 
 <div class="bgimg-3">
   <div class="caption">
-    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>
+    <span class="border" style="background-color:transparent;font-size:25px;color: #F7;">MEUS SITES</span>
   </div>
 </div>
 
 <div style="position:relative;">
-  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-    <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 30px;text-align: justify;">
+    <p>Alguns dos sites que eu fiz. São estáticos, mas mostra meu entendimento em Javascript, CSS e HTML5.</p>
 	<!-- Container (Sessão SITES CONSTRUIDOS) ==================================================================================== -->
-		<p>
-			<div id="" class="row container-fluid w3-animate-opacity" style="margin-top: -10px;">
-				<a class="btn btn-circle" onClick='javascript:location.href="https://victorsjesus.github.io/CVPortfolio/MG.html"'>
-					<img style="height: 48px; margin-left:-5px;" src="./imgs/img-Index/Magic_icon.png" class="">
-				</a>
+		
+			<div id="" class="row container-fluid w3-animate-left">
+				<!-- <a class="btn btn-circle" href="https://victorsjesus.github.io/CVPortfolio/MG.html"> -->
+					<!-- <img style="height: 48px; margin-left:-5px;" src="./imgs/img-Index/Magic_icon.png" class=""> -->
+				<!-- </a> -->
 				
-				<a class="btn btn-circle" onClick='javascript:location.href="https://victorsjesus.github.io/CVPortfolio/TB.html"'>
-					<img style="height: 46px; margin-left:-8px;" src="./imgs/img-Index/Tibia_icon.png" class="">
-				</a>
+				<!-- <a class="btn btn-circle" onClick='javascript:location.href="https://victorsjesus.github.io/CVPortfolio/TB.html"'> -->
+					<!-- <img style="height: 46px; margin-left:-8px;" src="./imgs/img-Index/Tibia_icon.png" class=""> -->
+				<!-- </a> -->
+				<!-- ---------============---------- -->
+				<div class="row sites w3-hover-text-teal" onClick='javascript:location.href="https://victorsjesus.github.io/CVPortfolio/MG.html"'>
+					<a class="btn btn-circle" href="https://victorsjesus.github.io/CVPortfolio/MG.html">
+						<img style="height: 48px; margin-left:-5px;" src="./imgs/img-Index/Magic_icon.png" class="">
+					</a>
+					<span>CARTAS MÁGICAS</span>
+				</div>
+				<div class="row sites w3-hover-text-teal" onClick='javascript:location.href="https://victorsjesus.github.io/CVPortfolio/TB.html"'>
+					<a class="btn btn-circle" href="https://victorsjesus.github.io/CVPortfolio/TB.html">
+						<img style="height: 46px; margin-left:-8px;" src="./imgs/img-Index/Tibia_icon.png" class="">
+					</a>
+					<span style="margin-left:15px;">TIBIA</span><br><span style="margin-left:15px;">HELP</span>
+				</div>
 			</div>
-		</p>
+		
 	
   </div>
 </div>
