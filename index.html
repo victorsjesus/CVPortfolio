@@ -108,15 +108,35 @@
 			text-decoration:none;
 		}
 		
+		#bigToasty {
+			display:block;
+			height: 200px; 
+			z-index:4; 
+			left:-50%; 
+			-webkit-animation-duration: 5s; /* Safari 4.0 - 8.0 */
+            -webkit-animation-iteration-count: 1; /* Safari 4.0 - 8.0 */
+            animation-duration: 2s;
+			-webkit-animation-name: aparecerLeft; /* Safari 4.0 - 8.0 */
+            animation-name: aparecerLeft;
+		}
+		/* Standard syntax */
+        @keyframes aparecerLeft {
+            0%   	{left:-50%;}
+            20% 	{left:0px;}
+			80%		{left:0px;}
+			100%	{left:-50%;}
+        }
+		
 		.div-circle {
 			background-color: gray;
 			height: 40px;
 			width: 40px;
 			border-radius: 50%;
-			display: flex;
+			display: none;
 			align-items: center;
 			float: left;
 			margin: 3px;
+			
 		}
 		
 		.btn-circle {
@@ -1141,8 +1161,9 @@
 	<!-- Modal -->
 	<div id="controleModal" class="w3-modal">
 		<div id="modalPad" class="w3-mobile"> <!-- VERIFICA SE GIRA A TELA [<600 PX] -->
+			<img id="bigToasty" class="w3-display-bottomleft" style="display:none;" src="./imgs/img-Index/toasty_mk.png">
 			<div id= "bkgModalControle" class="w3-modal-content w3-animate-top" style="background-color:transparent;">
-				<div class="w3-container">
+				<div id="bkgModal" class="w3-container">
 					<span onclick='$("#controleModal").fadeOut();' class="w3-button w3-round-xlarge w3-blue-gray w3-hover-teal w3-display-topright" style="color:black;">
 						FECHAR &times;
 					</span>
@@ -1154,10 +1175,10 @@
 							<div class="dpad-hole"></div>
 							<div id="dpad">
 								<canvas height="150" id="dpad-body" width="150"></canvas>
-								<button class="button" id="up"></button>
-								<button class="button" id="right"></button>
-								<button class="button" id="down"></button>
-								<button class="button" id="left"></button>
+								<button class="button" id="up" onClick="Konami_code (1)"></button>
+								<button class="button" id="right" onClick="Konami_code (4)"></button>
+								<button class="button" id="down" onClick="Konami_code (2)"></button>
+								<button class="button" id="left" onClick="Konami_code (3)"></button>
 							</div>
 						</section>
 						<section class="menu-pane">
@@ -1166,7 +1187,7 @@
 								<label class="start" for="start">Start</label>
 							</div>
 							<div class="buttons">
-							<button class="button select" id="select" onclick="javascript:alert('SELECT');">Select</button>
+							<button class="button select" id="select">Select</button>
 							<button class="button start" id="start">Start</button>
 							</div>
 						</section>
@@ -1175,8 +1196,8 @@
 								Nintendo
 							</div>
 							<div class="buttons">
-								<label class="label">B<button class="button" id="b"></button></label>
-								<label class="label">A<button class="button" id="a"></button></label>
+								<label class="label">B<button class="button" id="b" onClick="Konami_code (5)"></button></label>
+								<label class="label">A<button class="button" id="a" onClick="Konami_code (6)"></button></label>
 							</div>
 						</section>
 					</figure> <!-- FIM GAMEPAD ========================================== -->
@@ -1185,15 +1206,22 @@
 						<b style="font-size: 16px; color: white;">Insira o código <em>"KONAMI"</em>.</b>
 						<div class="w3-light-grey w3-round-xxlarge w3-hide-small" style="height:46px;">
 							<div class="w3-container w3-center w3-round-xxlarge w3-light-grey" style="height:46px; width:100%;">
-								<div class="btn div-circle">
-									<img style="height: 36px; margin-left:-6px;" src="./imgs/img-Index/CONTROL-UP.png">
-									<!-- site da imagem: https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Konami-code.svg/1280px-Konami-code.svg.png -->
-								</div>
+								<!-- site da imagem: https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Konami-code.svg/1280px-Konami-code.svg.png -->
+								<!--CIMA--><div id="KC-1" class="btn div-circle w3-animate-right"><img style="height: 36px; margin-left:-4px;" src="./imgs/img-Index/CONTROL-UP.png"></div>
+								<!--CIMA--><div id="KC-2" class="btn div-circle w3-animate-right"><img style="height: 36px; margin-left:-4px;" src="./imgs/img-Index/CONTROL-UP.png"></div>
+								<!--BAIXO--><div id="KC-3" class="btn div-circle w3-animate-right"><img style="height: 36px; margin-left:-4px;" src="./imgs/img-Index/CONTROL-DOWN.png"></div>
+								<!--BAIXO--><div id="KC-4" class="btn div-circle w3-animate-right"><img style="height: 36px; margin-left:-4px;" src="./imgs/img-Index/CONTROL-DOWN.png"></div>
+								<!--ESQRD--><div id="KC-5" class="btn div-circle w3-animate-right"><img style="height: 34px; margin-left:-10px;" src="./imgs/img-Index/CONTROL-LEFT.png"></div>
+								<!--DIREI--><div id="KC-6" class="btn div-circle w3-animate-right"><img style="height: 36px; margin-left:-4px;" src="./imgs/img-Index/CONTROL-RIGHT.png"></div>
+								<!--ESQRD--><div id="KC-7" class="btn div-circle w3-animate-right"><img style="height: 34px; margin-left:-10px;" src="./imgs/img-Index/CONTROL-LEFT.png"></div>
+								<!--DIREI--><div id="KC-8" class="btn div-circle w3-animate-right"><img style="height: 36px; margin-left:-4px;" src="./imgs/img-Index/CONTROL-RIGHT.png"></div>
+								<!--  B  --><div id="KC-9" class="btn div-circle w3-animate-right"><img style="height: 40px; margin-left:-12px;" src="./imgs/img-Index/CONTROL-B.png"></div>
+								<!--  A  --><div id="KC-10" class="btn div-circle w3-animate-right"><img style="height: 40px; margin-left:-12px;" src="./imgs/img-Index/CONTROL-A.png"></div>
 							</div>
 						</div>
 						<div class="w3-hide-small"><br/></div>
 						<div class="w3-light-grey w3-round-xlarge w3-small">
-							<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:85%">85%</div>
+							<div id="KC-BAR" class="w3-container w3-center w3-round-xlarge" style="background-color: light-grey;">0%</div>
 						</div>
 						<br/>
 					</div>
@@ -1451,15 +1479,175 @@
 				//$element.addClass("gamepadInverse");
 				document.getElementById("modalPad").className = "gamepadInverse";
 				document.getElementById("bkgModalControle").style.transform = "scale(0.7,0.7)";
-			/* Acima de 768px, se existir a classe navbar-inverse ela é retirada*/
+				document.getElementById("bkgModal").style.marginTop = "0px";
+			/* Acima de 600px, se existir a classe navbar-inverse ela é retirada*/
 			} else {
 				//$element.removeClass("gamepadInverse");
 				document.getElementById("modalPad").className = document.getElementById("modalPad").className.replace("gamepadInverse"," ");
 				document.getElementById("bkgModalControle").style.transform = "scale(1,1)";
+				document.getElementById("bkgModal").style.marginTop = "-20px";
 			}
 		}).trigger("resize");
 		
+	<!-- GAMEPAD - CODIGO KONAMI ==================================== -->
+		var seqK = 1;
+		function Konami_code (K) {
+			var botao = K;
+			switch (seqK) {
+                case 1:
+					if (botao == 1) {
+						document.getElementById("KC-1").style.display = 'flex';
+						document.getElementById("KC-BAR").style.backgroundColor = "#FF0000";
+						document.getElementById("KC-BAR").style.width = "10%";
+						document.getElementById("KC-BAR").innerHTML = "10%";
+						seqK = 2;
+						}
+					else {
+						alert ("Poxa ... código errado =( ");
+						LimparKC ();
+					}
+					break;
+				case 2:
+					if (botao == 1) {
+						document.getElementById("KC-2").style.display = 'flex';
+						document.getElementById("KC-BAR").style.backgroundColor = "#FF4000";
+						document.getElementById("KC-BAR").style.width = "20%";
+						document.getElementById("KC-BAR").innerHTML = "20%";
+						seqK = 3;
+					}
+					else {
+						alert ("Poxa ... código errado =( ");
+						LimparKC ();
+					}
+					break;
+				case 3:
+					if (botao == 2) {
+						document.getElementById("KC-3").style.display = 'flex';
+						document.getElementById("KC-BAR").style.backgroundColor = "##FFAA00";
+						document.getElementById("KC-BAR").style.width = "30%";
+						document.getElementById("KC-BAR").innerHTML = "30%";
+						seqK = 4;
+					}
+					else {
+						alert ("Poxa ... código errado =( ");
+						LimparKC ();
+					}
+					break;
+				case 4:
+					if (botao == 2) {
+						document.getElementById("KC-4").style.display = 'flex';
+						document.getElementById("KC-BAR").style.backgroundColor = "#FFAA00";
+						document.getElementById("KC-BAR").style.width = "40%";
+						document.getElementById("KC-BAR").innerHTML = "40%";
+						seqK = 5;
+					}
+					else {
+						alert ("Poxa ... código errado =( ");
+						LimparKC ();
+					}
+					break;
+				case 5:
+					if (botao == 3) {
+						document.getElementById("KC-5").style.display = 'flex';
+						document.getElementById("KC-BAR").style.backgroundColor = "#BF00FF";
+						document.getElementById("KC-BAR").style.width = "50%";
+						document.getElementById("KC-BAR").innerHTML = "50%";
+						seqK = 6;
+					}
+					else {
+						alert ("Poxa ... código errado =( ");
+						LimparKC ();
+					}
+					break;
+				case 6:
+					if (botao == 4) {
+						document.getElementById("KC-6").style.display = 'flex';
+						document.getElementById("KC-BAR").style.backgroundColor = "#0174DF";
+						document.getElementById("KC-BAR").style.width = "60%";
+						document.getElementById("KC-BAR").innerHTML = "60%";
+						seqK = 7;
+					}
+						//else LimparBtns ()  seqK = 1;
+					break;
+				case 7:
+					if (botao == 3) {
+							document.getElementById("KC-7").style.display = 'flex';
+							document.getElementById("KC-BAR").style.backgroundColor = "#00BFFF";
+							document.getElementById("KC-BAR").style.width = "70%";
+							document.getElementById("KC-BAR").innerHTML = "70%";
+							seqK = 8;
+							}
+					else {
+						alert ("Poxa ... código errado =( ");
+						LimparKC ();
+					}
+					break;
+				case 8:
+					if (botao == 4) {
+						document.getElementById("KC-8").style.display = 'flex';
+						document.getElementById("KC-BAR").style.backgroundColor = "#00FFFF";
+						document.getElementById("KC-BAR").style.width = "80%";
+						document.getElementById("KC-BAR").innerHTML = "80%";
+						seqK = 9;
+					}
+					else {
+						alert ("Poxa ... código errado =( ");
+						LimparKC ();
+					}
+					break;
+				case 9:
+					if (botao == 5) {
+						document.getElementById("KC-9").style.display = 'flex';
+						document.getElementById("KC-BAR").style.backgroundColor = "#00FF80";
+						document.getElementById("KC-BAR").style.width = "90%";
+						document.getElementById("KC-BAR").innerHTML = "90%";
+						seqK = 10;
+					}
+					else {
+						alert ("Poxa ... código errado =( ");
+						LimparKC ();
+					}
+					break;
+				case 10:
+					if (botao == 6) {
+						document.getElementById("KC-10").style.display = 'flex';
+						document.getElementById("KC-BAR").style.backgroundColor = "#00FF00";
+						document.getElementById("KC-BAR").style.width = "100%";
+						document.getElementById("KC-BAR").innerHTML = "100%";
+						document.getElementById("bigToasty").style.display = 'block';
+						seqK = 1;
+						alert("Agora aqui deveria abrir outro site .../n \n Em Construção ...");
+						setTimeout(LimparKC, 2500);
+					}
+					else {
+						alert ("Poxa ... código errado =( ");
+						LimparKC ();
+					}
+					break;
+				default:
+					alert("Erro: Konami-code");
+					LimparKC();
+			}
+		}
 		
+		function LimparKC () {
+			$("#controleModal").fadeOut();
+			document.getElementById("bigToasty").style.display = 'none';
+			document.getElementById("KC-1").style.display = 'none';
+			document.getElementById("KC-2").style.display = 'none';
+			document.getElementById("KC-3").style.display = 'none';
+			document.getElementById("KC-4").style.display = 'none';
+			document.getElementById("KC-5").style.display = 'none';
+			document.getElementById("KC-6").style.display = 'none';
+			document.getElementById("KC-7").style.display = 'none';
+			document.getElementById("KC-8").style.display = 'none';
+			document.getElementById("KC-9").style.display = 'none';
+			document.getElementById("KC-10").style.display = 'none';
+			document.getElementById("KC-BAR").style.backgroundColor = "#00FF00";
+			document.getElementById("KC-BAR").style.width = "0";
+			document.getElementById("KC-BAR").innerHTML = "0%";
+			seqK = 1;
+		}
 		
 	</script>
 
