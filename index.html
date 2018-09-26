@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 	<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
@@ -126,6 +127,29 @@
 			80%		{left:0px;}
 			100%	{left:-50%;}
         }
+		
+		#gratz {
+			font-family:Bangers; 
+			font-size:100px; 
+			color: gold;
+			display:block;
+			height: 200px; 
+			z-index:5; 
+			left:-50%; 
+			-webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+            -webkit-animation-iteration-count: 1; /* Safari 4.0 - 8.0 */
+            animation-duration: 2s;
+			-webkit-animation-name: aparecerGreat; /* Safari 4.0 - 8.0 */
+            animation-name: aparecerGreat;
+		}
+		/* Standard syntax */
+        @keyframes aparecerGreat {
+            0%   	{left:-50%;}
+            20% 	{left:50%;}
+			80%		{left:50%}
+			100%	{left:150%;}
+        }
+		
 		
 		.div-circle {
 			background-color: gray;
@@ -1156,15 +1180,16 @@
 	<a onclick="document.getElementById('controleModal').style.display='block'" class="w3-text-teal">
 		<i class="fa fa-gamepad w3-hover-text-black" style="font-size:30px; cursor:pointer;"></i>
 	</a>
-	<br/> CLIQUE SE VC É GAMER \,,/
+	<br/> CLIQUE SE VC É GAMER \,,/<br/>
+	
+	
 </div>
 	<!-- Modal -->
 	<div id="controleModal" class="w3-modal">
 		<div id="modalPad" class="w3-mobile"> <!-- VERIFICA SE GIRA A TELA [<600 PX] -->
-			<img id="bigToasty" class="w3-display-bottomleft" style="display:none;" src="./imgs/img-Index/toasty_mk.png">
 			<div id= "bkgModalControle" class="w3-modal-content w3-animate-top" style="background-color:transparent;">
 				<div id="bkgModal" class="w3-container">
-					<span onclick='$("#controleModal").fadeOut();' class="w3-button w3-round-xlarge w3-blue-gray w3-hover-teal w3-display-topright" style="color:black;">
+					<span onclick='LimparKC()' class="w3-button w3-round-xlarge w3-blue-gray w3-hover-teal w3-display-topright" style="color:black;">
 						FECHAR &times;
 					</span>
 					<!-- <img src="./imgs/img-Index/controleXBox.png" alt="Controle_XBOX" height="400" width="400">  -->
@@ -1242,6 +1267,8 @@
 
 
 			</div>
+			<img id="bigToasty" class="w3-display-bottomleft" style="display:none;" src="./imgs/img-Index/toasty_mk.png">
+			<div id="gratz" class="w3-display-middle" style="display:none;">GREAT !!!</div>
 		</div>
 	</div>
 		
@@ -1342,7 +1369,7 @@
 	<footer class="w3-container w3-gray w3-center w3-justify">
 		Encontre-me nas redes sociais.
 		<p id="sociais">
-			<a href="https://www.facebook.com/victorsjesus" TARGET="_blank"><i class="fa fa-facebook-official w3-hover-blue"></i></a>
+			<a href="https://www.facebook.com/victorsjesus" TARGET="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
 			<i class="fa fa-instagram w3-hover-opacity" style="cursor:pointer;"></i></a>
 			<i class="fa fa-snapchat w3-hover-opacity" style="cursor:pointer;"></i>
 			<i class="fa fa-pinterest-p w3-hover-opacity" style="cursor:pointer;"></i>
@@ -1491,6 +1518,7 @@
 		
 	<!-- GAMEPAD - CODIGO KONAMI ==================================== -->
 		var seqK = 1;
+		var progresso = 0;
 		function Konami_code (K) {
 			var botao = K;
 			switch (seqK) {
@@ -1498,8 +1526,10 @@
 					if (botao == 1) {
 						document.getElementById("KC-1").style.display = 'flex';
 						document.getElementById("KC-BAR").style.backgroundColor = "#FF0000";
-						document.getElementById("KC-BAR").style.width = "10%";
-						document.getElementById("KC-BAR").innerHTML = "10%";
+						document.getElementById("KC-BAR").style.width = "1%";
+						//document.getElementById("KC-BAR").style.width = "10%";
+						//document.getElementById("KC-BAR").innerHTML = "10%";
+						CarregaKCBAR(10);
 						seqK = 2;
 						}
 					else {
@@ -1511,8 +1541,7 @@
 					if (botao == 1) {
 						document.getElementById("KC-2").style.display = 'flex';
 						document.getElementById("KC-BAR").style.backgroundColor = "#FF4000";
-						document.getElementById("KC-BAR").style.width = "20%";
-						document.getElementById("KC-BAR").innerHTML = "20%";
+						CarregaKCBAR(20);
 						seqK = 3;
 					}
 					else {
@@ -1523,9 +1552,8 @@
 				case 3:
 					if (botao == 2) {
 						document.getElementById("KC-3").style.display = 'flex';
-						document.getElementById("KC-BAR").style.backgroundColor = "##FFAA00";
-						document.getElementById("KC-BAR").style.width = "30%";
-						document.getElementById("KC-BAR").innerHTML = "30%";
+						document.getElementById("KC-BAR").style.backgroundColor = "#FFAA00";
+						CarregaKCBAR(30);
 						seqK = 4;
 					}
 					else {
@@ -1536,9 +1564,8 @@
 				case 4:
 					if (botao == 2) {
 						document.getElementById("KC-4").style.display = 'flex';
-						document.getElementById("KC-BAR").style.backgroundColor = "#FFAA00";
-						document.getElementById("KC-BAR").style.width = "40%";
-						document.getElementById("KC-BAR").innerHTML = "40%";
+						document.getElementById("KC-BAR").style.backgroundColor = "#FFEE00";
+						CarregaKCBAR(40);
 						seqK = 5;
 					}
 					else {
@@ -1550,8 +1577,7 @@
 					if (botao == 3) {
 						document.getElementById("KC-5").style.display = 'flex';
 						document.getElementById("KC-BAR").style.backgroundColor = "#BF00FF";
-						document.getElementById("KC-BAR").style.width = "50%";
-						document.getElementById("KC-BAR").innerHTML = "50%";
+						CarregaKCBAR(50);
 						seqK = 6;
 					}
 					else {
@@ -1563,18 +1589,19 @@
 					if (botao == 4) {
 						document.getElementById("KC-6").style.display = 'flex';
 						document.getElementById("KC-BAR").style.backgroundColor = "#0174DF";
-						document.getElementById("KC-BAR").style.width = "60%";
-						document.getElementById("KC-BAR").innerHTML = "60%";
+						CarregaKCBAR(60);
 						seqK = 7;
 					}
-						//else LimparBtns ()  seqK = 1;
+					else {
+						alert ("Poxa ... código errado =( ");
+						LimparKC ();
+					}
 					break;
 				case 7:
 					if (botao == 3) {
 							document.getElementById("KC-7").style.display = 'flex';
 							document.getElementById("KC-BAR").style.backgroundColor = "#00BFFF";
-							document.getElementById("KC-BAR").style.width = "70%";
-							document.getElementById("KC-BAR").innerHTML = "70%";
+							CarregaKCBAR(70);
 							seqK = 8;
 							}
 					else {
@@ -1586,8 +1613,7 @@
 					if (botao == 4) {
 						document.getElementById("KC-8").style.display = 'flex';
 						document.getElementById("KC-BAR").style.backgroundColor = "#00FFFF";
-						document.getElementById("KC-BAR").style.width = "80%";
-						document.getElementById("KC-BAR").innerHTML = "80%";
+						CarregaKCBAR(80);
 						seqK = 9;
 					}
 					else {
@@ -1599,8 +1625,7 @@
 					if (botao == 5) {
 						document.getElementById("KC-9").style.display = 'flex';
 						document.getElementById("KC-BAR").style.backgroundColor = "#00FF80";
-						document.getElementById("KC-BAR").style.width = "90%";
-						document.getElementById("KC-BAR").innerHTML = "90%";
+						CarregaKCBAR(90);
 						seqK = 10;
 					}
 					else {
@@ -1610,13 +1635,14 @@
 					break;
 				case 10:
 					if (botao == 6) {
+						BrilhoBranco();
 						document.getElementById("KC-10").style.display = 'flex';
 						document.getElementById("KC-BAR").style.backgroundColor = "#00FF00";
-						document.getElementById("KC-BAR").style.width = "100%";
-						document.getElementById("KC-BAR").innerHTML = "100%";
+						CarregaKCBAR(100);
 						document.getElementById("bigToasty").style.display = 'block';
+						document.getElementById("gratz").style.display = 'block';
 						seqK = 1;
-						alert("Agora aqui deveria abrir outro site .../n \n Em Construção ...");
+						alert("Agora aqui deveria abrir outro site ... \n Em Construção ...");
 						setTimeout(LimparKC, 2500);
 					}
 					else {
@@ -1629,7 +1655,19 @@
 					LimparKC();
 			}
 		}
-		
+		<!-- GAMEPAD - CARREGAMENTO DA BARRA ============================ -->
+		function CarregaKCBAR (m) {
+			var maximo = parseInt(m);
+			if((progresso) < maximo){
+				progresso = progresso + 1;
+				setTimeout(function() {
+					document.getElementById("KC-BAR").style.width = progresso+"%";
+					document.getElementById("KC-BAR").innerHTML = progresso + "%";
+					CarregaKCBAR(maximo);
+				}, 50);				
+			}	
+		}
+		<!-- GAMEPAD - LIMPAR CODIGO KONAMI ============================= -->
 		function LimparKC () {
 			$("#controleModal").fadeOut();
 			document.getElementById("bigToasty").style.display = 'none';
@@ -1643,10 +1681,17 @@
 			document.getElementById("KC-8").style.display = 'none';
 			document.getElementById("KC-9").style.display = 'none';
 			document.getElementById("KC-10").style.display = 'none';
-			document.getElementById("KC-BAR").style.backgroundColor = "#00FF00";
-			document.getElementById("KC-BAR").style.width = "0";
+			document.getElementById("KC-BAR").style.backgroundColor = "transparent";
+			document.getElementById("KC-BAR").style.width = "100%";
 			document.getElementById("KC-BAR").innerHTML = "0%";
+			progresso = 0;
+			maximo = 0;
 			seqK = 1;
+		}
+		<!-- GAMEPAD - SUCESSO  ========================================= -->
+		function BrilhoBranco () {
+			$("body").fadeOut(250);
+			$("body").fadeIn(500);
 		}
 		
 	</script>
