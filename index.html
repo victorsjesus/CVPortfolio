@@ -284,8 +284,7 @@
 			top: 16px;
 			left: 50%;
 			margin-left: -25px;
-			background-color: #999999;
-			z-index: 100;
+			z-index: 3;
 			border-top-right-radius: 50%;
 			border-top-left-radius: 50%;
 			border-bottom-right-radius: 50%;
@@ -497,81 +496,81 @@
 			background: radial-gradient(76% 63%, circle closest-corner, hsla(0, 0%, 60%, 0.45), hsla(0, 0%, 10%, 1) 100%);
 			box-shadow: -3px -2px 4px -1px #444444 inset /* scalable units did not work well across browsers */;
 		}
-    #dpad.up {
-      transform: rotate(.4deg) scaleY(0.98);
-      margin-top: .05em;
-      margin-left: .15em;
-    }
-    #dpad.right {
-      transform: rotate(.5deg) scaleX(1.02);
-      margin-top: .01em;
-      margin-left: .11em;
-    }
-    #dpad.down {
-      transform: rotate(-.6deg) scaleY(1.01);
-      margin-top: .05em;
-      margin-left: .05em;
-    }
-    #dpad.left {
-      transform: rotate(-.8deg) scaleX(0.97);
-      margin-top: .015em;
-      margin-left: .1em;
-    }
-      #dpad-body {
-        left: -2.3em;
-        top: -2.3em;
-        position: absolute;
-        z-index: 1;
-      }
-      #dpad .button {
-        position: absolute;
-        z-index: 2;
-        width: 2em;
-        height: 2em;
-        background-color: rgba(0, 0, 0, 0); /* "transparent" buttons in ie9 aren't clickable, but rgba can be used */
-        border: none;
-        padding: 0;
-      }
-      #dpad .button:before {
-        content: "";
-        display: block;
-        position: absolute;
-        margin: 0 .55em 0;
-        width: .8em;
-        height: .8em;
-        border-width: .1em;
-        border-style: solid;
-        transform: rotate(315deg);
-      }
-      #dpad .button:after {
-        content: "";
-        display: block;
-        position: absolute;
-        margin: .5em .5em 0;
-        width: .8em;
-        height: .45em;
-        border-width: .1em;
-        border-style: solid;
-      }
-      #up { top: -2.7em; }
+		#dpad.up {
+			transform: rotate(.4deg) scaleY(0.98);
+			margin-top: .05em;
+			margin-left: .15em;
+		}
+		#dpad.right {
+			transform: rotate(.5deg) scaleX(1.02);
+			margin-top: .01em;
+			margin-left: .11em;
+		}
+		#dpad.down {
+			transform: rotate(-.6deg) scaleY(1.01);
+			margin-top: .05em;
+			margin-left: .05em;
+		}
+		#dpad.left {
+			transform: rotate(-.8deg) scaleX(0.97);
+			margin-top: .015em;
+			margin-left: .1em;
+		}
+		#dpad-body {
+			left: -2.3em;
+			top: -2.3em;
+			position: absolute;
+			z-index: 1;
+		}
+		#dpad .button {
+			position: absolute;
+			z-index: 2;
+			width: 2em;
+			height: 2em;
+			background-color: rgba(0, 0, 0, 0); /* "transparent" buttons in ie9 aren't clickable, but rgba can be used */
+			border: none;
+			padding: 0;
+		}
+		#dpad .button:before {
+			content: "";
+			display: block;
+			position: absolute;
+			margin: 0 .55em 0;
+			width: .8em;
+			height: .8em;
+			border-width: .1em;
+			border-style: solid;
+			transform: rotate(315deg);
+		}
+		#dpad .button:after {
+			content: "";
+			display: block;
+			position: absolute;
+			margin: .5em .5em 0;
+			width: .8em;
+			height: .45em;
+			border-width: .1em;
+			border-style: solid;
+		}
+		#up { top: -2.7em; }
         #up:before { border-color: #151515 #444 transparent transparent; }
         #up:after { border-color: transparent #444 #444 #151515; }
-      #right {
-        left: 2.7em;
-        transform: rotate(90deg);
-      }
+		#right {
+			left: 2.7em;
+			transform: rotate(90deg);
+		}
         #right:before { border-color: #444 #444 transparent transparent; }
         #right:after { border-color: transparent #444 #151515 #151515; }
-      #down {
-        top: 2.7em;
-        transform: rotate(180deg);
-      }
+		#down {
+			top: 2.7em;
+			transform: rotate(180deg);
+		}
         #down:before { border-color: #444 #151515 transparent transparent; }
         #down:after { border-color: transparent #151515 #151515 #444; }
-      #left {
-        left: -2.7em;
-        transform: rotate(270deg);
-      }
+		#left {
+			left: -2.7em;
+			transform: rotate(270deg);
+		}
         #left:before { border-color: #444 #151515 transparent transparent; }
         #left:after { border-color: transparent #151515 #444 #444; }
 
@@ -714,7 +713,7 @@
 <body>
 	<!-- NAVBAR ====================================================================================================== -->
 	<!-- Navbar (Fixo no topo) -->
-	<div class="w3-top" style="color:white;">
+	<div class="w3-top" style="color:white; z-index:4;">
 		<div class="w3-bar" id="myNavbar">
 			<a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
 				<i class="fa fa-bars"></i>
@@ -735,7 +734,7 @@
 			<a href="#" class="w3-bar-item w3-button">SEARCH</a>
 		</div>
 	</div>
-	<br/><br/>19.09 17:20
+	<br/><br/>26.09 17:20
 	<!-- PARALLAX 1 ================================================================================================== -->
 	<div class="bgimg-1" id="home">
 		<div class="caption">
@@ -813,7 +812,8 @@
 	<!-- Container =================================================================================================== -->
 	<div style="position:relative;">
 		<div style="color:#ddd;background-color:#282E34;text-align:center;padding:20px 30px;text-align: justify;">
-			<p>Atuo na área de Informática a mais de 10 anos. Desde lecionando até trabalhando com Suporte e Desenvolvimento de Sistemas.</p>
+			<p>	Atuo na área de Informática a mais de 10 anos. 
+				Desde lecionando até trabalhando com Suporte e Desenvolvimento de Sistemas.</p>
 		</div>
 	</div>
 	
@@ -928,7 +928,7 @@
 					<!-- Empregos Anteriores -->
 					<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Experiência Profissional</h2>
 					<div class="w3-container">
-						<h5 class="w3-opacity"><b>DIGISYSTEM<br/>Analista de Suporte - Front End Developer</b></h5>
+						<h5 class="w3-opacity"><b>Digisystem Soluções<br/>Analista de Suporte - Front End Developer</b></h5>
 						<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Out 2017 - <span class="w3-tag w3-teal w3-round">Atual</span></h6>
 						<p>	Prestação suporte a clientes SESI / SENAI / SEBRAE analisando o código dos sistemas desenvolvidos em C# e
 							corrigindo as devidas falhas. Desenvolvimento Web da Base de Conhecimento (HTML / CSS / JavaScript) – Front End.
@@ -1145,35 +1145,7 @@
 
 <br/><br/>
 
-<!-- <div class="container"> -->
-  <!-- <h2>Modal Example</h2> -->
-  Trigger the modal with a button
-  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
 
-  Modal
-  <!-- <div class="modal fade" id="myModal" role="dialog"> -->
-    <!-- <div class="modal-dialog"> -->
-    
-      Modal content
-      <!-- <div class="modal-content"> -->
-        <!-- <div class="modal-header"> -->
-          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-          <!-- <h4 class="modal-title">Modal Header</h4> -->
-        <!-- </div> -->
-        <!-- <div class="modal-body"> -->
-          <!-- <p>Some text in the modal.</p> -->
-        <!-- </div> -->
-        <!-- <div class="modal-footer"> -->
-          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-        <!-- </div> -->
-      <!-- </div> -->
-      
-    <!-- </div> -->
-  <!-- </div> -->
-  
-<!-- </div> -->
-
-<!-- <br/><br/> -->
 
 <div>
 	Teste para GAMEPAD para empresa de jogos:
@@ -1251,22 +1223,8 @@
 						<br/>
 					</div>
 				</div>
-			
-			<!-- TELA pequena -->
-			<!-- <div class="w3-container" style="width:400px; height:400px;"> -->
-				<!-- <span onclick='$("#controleModal").fadeOut();' class="w3-button w3-circle w3-hover-teal w3-display-topleft" style="color:black; transform: rotate(270deg); "> FECHAR &times;</span> -->
-				<!-- <img src="./imgs/img-Index/controleSNES.png" alt="Controle_SNES" height="600" width="350">  -->
-				<!-- <div class="w3-display-right"> -->
-				<!-- <div class="w3-display-container" style="transform: rotate(270deg); transform-origin: right bottom 0;"> -->
-					<!-- <b style="font-size: 16px; color: white;">Insira o código <em>"KONAMI"</em>.</b> -->
-					<!-- <div class="w3-light-grey w3-round-xlarge w3-small"> -->
-						<!-- <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:85%">85%</div> -->
-					<!-- </div> -->
-				<!-- </div> -->
-				<!-- </div> -->
-
-
 			</div>
+			<!-- EM CASO DE SUCESSO -->
 			<img id="bigToasty" class="w3-display-bottomleft" style="display:none;" src="./imgs/img-Index/toasty_mk.png">
 			<div id="gratz" class="w3-display-middle" style="display:none;">GREAT !!!</div>
 		</div>
@@ -1639,8 +1597,6 @@
 						document.getElementById("KC-10").style.display = 'flex';
 						document.getElementById("KC-BAR").style.backgroundColor = "#00FF00";
 						CarregaKCBAR(100);
-						document.getElementById("bigToasty").style.display = 'block';
-						document.getElementById("gratz").style.display = 'block';
 						seqK = 1;
 						alert("Agora aqui deveria abrir outro site ... \n Em Construção ...");
 						setTimeout(LimparKC, 2500);
@@ -1671,6 +1627,7 @@
 		function LimparKC () {
 			$("#controleModal").fadeOut();
 			document.getElementById("bigToasty").style.display = 'none';
+			document.getElementById("gratz").style.display = 'none';
 			document.getElementById("KC-1").style.display = 'none';
 			document.getElementById("KC-2").style.display = 'none';
 			document.getElementById("KC-3").style.display = 'none';
@@ -1692,6 +1649,9 @@
 		function BrilhoBranco () {
 			$("body").fadeOut(250);
 			$("body").fadeIn(500);
+			document.getElementById("controleModal").style.overflow = 'hidden';
+			document.getElementById("bigToasty").style.display = 'block';
+			document.getElementById("gratz").style.display = 'block';
 		}
 		
 	</script>
