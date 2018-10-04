@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signos!</title>
+	<meta charset="UTF-8">
+</head>
+<body style="font-size: 20px;">
+	<p>Hoje : <span id="datando">Teste</span></p>
+	
+	<p>
+		Data de Nascimento : <input id="nasc" name="nasc" type="date"><br/>
+		<input type="button" onclick='calcular();' value="Verificar">
+	</p>
+	
+	<p style="">
+		Você viveu ...		 				<br/>
+		Anos : 		<span id="lblAnos">		</span><br/>
+		Dias : 		<span id="lblDias">		</span><br/>
+		Horas : 	<span id="lblHoras">	</span><br/>
+		Milésimos : <span id="lblMiles">	</span><br/>
+	</p>
+	
+	<script>
+		//Coletando datas
+		var dataAtual = new Date();
+		var dias = new Array('domingo','segunda','terça','quarta','quinta','sexta','sábado');
+		var meses = new Array('Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro');
+		//Formatando
+		var dia     = dataAtual.getDate();           // 1-31
+		var mes     = dataAtual.getMonth();          // 0-11 (zero=janeiro)
+		var ano4    = dataAtual.getFullYear();       // 4 dígitos
+		//Escrevendo
+		document.getElementById("datando").innerHTML = "São " + dataAtual.getHours() + " horas e " + dataAtual.getMinutes() + " minutos do " +
+			"Dia " + dia + " ( " + dias[dataAtual.getDay()] + " ) de " + meses[mes] + " do ano de " + ano4;
+			
+		// FUNÇÕES ================================================================================================================
+			
+		function calcular () {
+			var dataInput = (document.getElementById('nasc').value.split('-'));
+			dataInput = (dataInput[1] + '/' + dataInput[2] + '/' + dataInput[0]);
+			dataInput = new Date(dataInput);
+			// ESCREVER
+			document.getElementById("lblAnos").innerHTML = parseInt(Math.abs((dataInput - dataAtual)/(1000*60*60*24*365)));
+			document.getElementById("lblDias").innerHTML = parseInt(Math.abs((dataInput - dataAtual)/(1000*60*60*24)));
+			document.getElementById("lblHoras").innerHTML = parseInt(Math.abs((dataInput - dataAtual)/(1000*60*60)));
+			document.getElementById("lblMiles").innerHTML = Math.abs(dataInput - dataAtual); //diferença em milésimos e positivo
+			// VERIFICAR DIA DO ANO
+			Date.prototype.getDOY = function() {
+				var onejan = new Date(this.getFullYear(),0,1);
+				return Math.ceil((this - onejan) / 86400000);
+			}
+			function convertDateToUTC(date) { return new Date(2017,    
+				date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(),    
+				date.getUTCSeconds()); 
+			}
+
+			var a = convertDateToUTC(dataInput);
+			var daynum = a.getDOY();
+
+			alert(a);
+			alert(daynum);
+			
+			signo(daynum);
+		}
+
+		
+		function signo (d) {
+			var diaAno365 = d;
+			//
+			if (diaAno365 >= 297 && diaAno365<= 325) {alert("Escorpião");}
+			if (diaAno365 >= 326 && diaAno365<= 355) {alert("Sagitário");}
+			
+			
+		}
+
+
+
+		
+		function calcular_idade() {
+			//var diferenca = dataAtual.getFullYear() - dataInput.getFullYear();
+			//alert(diferenca);
+			var dater = (document.getElementById('nasc').value.split('-'));
+			dater = (dater[1] + '/' + dater[2] + '/' + dater[0]);
+			alert(dater);
+			var dataInput = new Date(dater);
+			
+			//dataInput = dater;
+			//
+			var diferenca = Math.abs(dataInput - dataAtual); //diferença em milésimos e positivo
+			var miles = 1000*60*60*24; // milésimos de segundo correspondente a um dia
+			var total = Math.round(diferenca/miles); //valor total de dias arredondado 
+			alert("Diferença de dias : " + dataInput + " \n->\n " + dataAtual + "\n = " +total + " \nfim");
+			//
+			document.getElementById("lblAnos").innerHTML = diferenca;
+			document.getElementById("lblDias").innerHTML = total;
+			document.getElementById("lblMiles").innerHTML = miles;
+		}
+		
+		
+
+		// ======================================================
+		
+		function teste () {
+			Date.prototype.getDOY = function() {
+			var onejan = new Date(this.getFullYear(),0,1);
+			return Math.ceil((this - onejan) / 86400000);
+			}
+			function convertDateToUTC(date) { return new Date(date.getUTCFullYear(),    
+				date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(),    
+				date.getUTCSeconds()); 
+			}
+
+			var today = new Date();
+			var a = convertDateToUTC(today);
+			var daynum = a.getDOY();
+
+			alert(a);
+			alert(daynum);
+		}
+		
+		function converterDiaAno () {
+			
+			
+		
+			Date.prototype.getDOY = function() {
+			var onejan = new Date(this.getFullYear(),0,1);
+			return Math.ceil((this - onejan) / 86400000);
+			}
+			function convertDateToUTC(date) { return new Date(date.getUTCFullYear(),    
+				date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(),    
+				date.getUTCSeconds()); 
+			}
+
+			var today = new Date();
+			var a = convertDateToUTC(dataInput);
+			var daynum = a.getDOY();
+
+			alert(a);
+			alert(daynum);
+		}
+		
+	</script>
+</body>
+</html>
