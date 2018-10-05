@@ -3,23 +3,52 @@
 <head>
 	<title>Signos!</title>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
 </head>
-<body style="font-size: 20px;">
-	<p>Hoje : <span id="datando">Teste</span></p>
-	
-	<p>
-		Data de Nascimento : <input id="nasc" name="nasc" type="date"><br/>
-		<input type="button" onclick='calcular();' value="Verificar">
-	</p>
-	
-	<p style="">
-		Você viveu ...		 				<br/>
-		Anos : 		<span id="lblAnos">		</span><br/>
-		Dias : 		<span id="lblDias">		</span><br/>
-		Horas : 	<span id="lblHoras">	</span><br/>
-		Milésimos : <span id="lblMiles">	</span><br/>
-	</p>
-	
+<body style="width: 100%;">
+	<div class="w3-row-padding">
+		<p>Hoje : <span id="datando">Teste</span></p>
+		<div class="w3-third">
+			<p>
+				Data de Nascimento : <input id="nasc" name="nasc" type="date" style="width:160px;"><br/>
+				<input type="button" onclick='calcular();' value="Verificar">
+			</p>
+			
+			<p class="w3-animate-left">
+				Você viveu ...	<br/>
+				<table class="w3-table w3-bordered w3-hoverable w3-card w3-animate-left">
+					<tr>
+						<td>Anos : </td>
+						<td><span id="lblAnos"></span></td>
+					</tr>
+					<tr>
+						<td>Dias :</td>
+						<td><span id="lblDias"></span></td>
+					</tr>
+					<tr>
+						<td>Horas :</td>
+						<td><span id="lblHoras"></span></td>
+					</tr>
+					<tr>
+						<td>Minutos :</td>
+						<td><span id="lblMinutos"></span></td>
+					</tr>
+					<tr>
+						<td>Milésimos : </td>
+						<td><span id="lblMiles"></span></td>
+					</tr>
+				</table>
+			</p>
+		</div>
+		<!-- COLUNA DIREITA ==================================================================================== -->
+		<div class="w3-twothird">
+			<h1 id="signame" class="w3-animate-right w3-right-align w3-border-bottom w3-margin-left">Teste</h1>
+			<p style="text-align: right;">Você nasceu no <span id="diaNac" style="font-size:20px; color:blue;"></span>° dia do ano.</p>
+		</div>
+	</div>
 	<script>
 		//Coletando datas
 		var dataAtual = new Date();
@@ -43,101 +72,69 @@
 			document.getElementById("lblAnos").innerHTML = parseInt(Math.abs((dataInput - dataAtual)/(1000*60*60*24*365)));
 			document.getElementById("lblDias").innerHTML = parseInt(Math.abs((dataInput - dataAtual)/(1000*60*60*24)));
 			document.getElementById("lblHoras").innerHTML = parseInt(Math.abs((dataInput - dataAtual)/(1000*60*60)));
+			document.getElementById("lblMinutos").innerHTML = parseInt(Math.abs((dataInput - dataAtual)/(1000*60)));
 			document.getElementById("lblMiles").innerHTML = Math.abs(dataInput - dataAtual); //diferença em milésimos e positivo
 			// VERIFICAR DIA DO ANO
 			Date.prototype.getDOY = function() {
 				var onejan = new Date(this.getFullYear(),0,1);
 				return Math.ceil((this - onejan) / 86400000);
 			}
-			function convertDateToUTC(date) { return new Date(2017,    
-				date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(),    
+			function convertDateToUTC(date) { return new Date(
+				2017, date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(),    
 				date.getUTCSeconds()); 
 			}
-
 			var a = convertDateToUTC(dataInput);
 			var daynum = a.getDOY();
-
 			alert(a);
 			alert(daynum);
 			
 			signo(daynum);
+			
 		}
-
 		
 		function signo (d) {
 			var diaAno365 = d;
+			document.getElementById("diaNac").innerHTML = diaAno365;
 			//
-			if (diaAno365 >= 297 && diaAno365<= 325) {alert("Escorpião");}
-			if (diaAno365 >= 326 && diaAno365<= 355) {alert("Sagitário");}
-			
+			if (diaAno365 >=  80 && diaAno365 <= 109) {
+				alert("Áries");
+				document.getElementById("signame").innerHTML = "Áries ♈ &nbsp";
+			}
+			if (diaAno365 >= 110 && diaAno365 <= 140) {alert("Touro");}
+			if (diaAno365 >= 141 && diaAno365 <= 172) {alert("Gêmeos");}
+			if (diaAno365 >= 173 && diaAno365 <= 203) {alert("Câncer");}
+			if (diaAno365 >= 204 && diaAno365 <= 234) {alert("Leão");}
+			if (diaAno365 >= 235 && diaAno365 <= 265) {alert("Virgem");}
+			if (diaAno365 >= 266 && diaAno365 <= 295) {
+				alert("Libra");
+				document.getElementById("signame").innerHTML = "Libra ♎ &nbsp";
+			}
+			if (diaAno365 >= 296 && diaAno365 <= 325) {alert("Escorpião");}
+			if (diaAno365 >= 326 && diaAno365 <= 355) {
+				alert("Sagitário");
+				document.getElementById("signame").innerHTML = "Sagitário ♐ &nbsp";
+			}
+			if (diaAno365 >  355 || diaAno365 <   19) {alert("Capricórnio");}
+			if (diaAno365 >=  19 && diaAno365 <=  49) {alert("Aquário");}
+			if (diaAno365 >=  50 && diaAno365 <=  79) {alert("Peixes");}
 			
 		}
-
-
-
 		
-		function calcular_idade() {
-			//var diferenca = dataAtual.getFullYear() - dataInput.getFullYear();
-			//alert(diferenca);
-			var dater = (document.getElementById('nasc').value.split('-'));
-			dater = (dater[1] + '/' + dater[2] + '/' + dater[0]);
-			alert(dater);
-			var dataInput = new Date(dater);
-			
-			//dataInput = dater;
-			//
-			var diferenca = Math.abs(dataInput - dataAtual); //diferença em milésimos e positivo
-			var miles = 1000*60*60*24; // milésimos de segundo correspondente a um dia
-			var total = Math.round(diferenca/miles); //valor total de dias arredondado 
-			alert("Diferença de dias : " + dataInput + " \n->\n " + dataAtual + "\n = " +total + " \nfim");
-			//
-			document.getElementById("lblAnos").innerHTML = diferenca;
-			document.getElementById("lblDias").innerHTML = total;
-			document.getElementById("lblMiles").innerHTML = miles;
-		}
+		/*
+		♈ = Áries
+		♉ = Touro
+		♊ = Gemêos
+		♋ = Câncer
+		♌ = Leão
+		♍ = Virgem
+		♎ = Libra
+		♏ = Escorpião
+		♐ = Sagitário
+		♑ = Capricórnio
+		♒ = Aquário
+		♓ = Peixes
+		*/
 		
-		
-
-		// ======================================================
-		
-		function teste () {
-			Date.prototype.getDOY = function() {
-			var onejan = new Date(this.getFullYear(),0,1);
-			return Math.ceil((this - onejan) / 86400000);
-			}
-			function convertDateToUTC(date) { return new Date(date.getUTCFullYear(),    
-				date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(),    
-				date.getUTCSeconds()); 
-			}
-
-			var today = new Date();
-			var a = convertDateToUTC(today);
-			var daynum = a.getDOY();
-
-			alert(a);
-			alert(daynum);
-		}
-		
-		function converterDiaAno () {
-			
-			
-		
-			Date.prototype.getDOY = function() {
-			var onejan = new Date(this.getFullYear(),0,1);
-			return Math.ceil((this - onejan) / 86400000);
-			}
-			function convertDateToUTC(date) { return new Date(date.getUTCFullYear(),    
-				date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(),    
-				date.getUTCSeconds()); 
-			}
-
-			var today = new Date();
-			var a = convertDateToUTC(dataInput);
-			var daynum = a.getDOY();
-
-			alert(a);
-			alert(daynum);
-		}
 		
 	</script>
 </body>
