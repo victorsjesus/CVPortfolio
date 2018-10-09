@@ -7,12 +7,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	
-	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<!-- https://fontawesome.com/icons?d=gallery&m=free -->
 	
 	<style rel="stylesheet" type="text/css">
+		.compatibilidades {
+			width:100%;
+			text-align: center;
+			border-collapse: separate;
+			border-spacing: 0 4px;
+		}
+		.cpt1 {border-radius: 17px 0 0 17px;}
+		.cpt3 {border-radius: 0 17px 17px 0;}
+		.cpt1, .cpt2, .cpt3 {
+			border: 1px solid lightblue;
+			background-color: lightblue;
+		}
 		.signCompt {
 			font-family: Wingdings; 
-			font-size:20px;
+			font-size:28px;
 		}
 	</style>
 	
@@ -23,8 +36,8 @@
 		<p>Hoje : <span id="datando">Teste</span></p>
 		<div class="w3-third">
 			<p>
-				Data de Nascimento : <input id="nasc" name="nasc" type="date" style="width:160px;"><br/>
-				<input type="button" onclick='calcular();' value="Verificar">
+				Data de Nascimento : <input id="nasc" name="nasc" type="date" style="width:160px;">
+				<p><input type="button" onclick='calcular();' value="Verificar"></p>
 			</p>
 			
 			<div id="PNasc" class="w3-animate-left" style="display:none;">
@@ -52,53 +65,81 @@
 					</tr>
 				</table>
 			</div>
+		<br>
 		</div>
+		
 		<!-- COLUNA DIREITA ==================================================================================== -->
 		<div id="ColSign" class="w3-twothird w3-animate-right" style="display:none;">
-			<h1 id="signame" class="w3-animate-right w3-right-align w3-border-bottom w3-margin-left">Teste</h1>
+			<img src="./imgs/img-SG/icon-sagitario.png" style="float: right; width:150px; height:150px; z-index:1" alt="SIGNO-CIRCULO"></img>
+			<h1 id="signame" class="w3-animate-right w3-right-align w3-border-bottom w3-margin-left" style="z-index:-1;"></h1>
 			<p style="text-align: right;">Você nasceu no <span id="diaNac" style="font-size:20px; color:blue;"></span>° dia do ano.</p>
 			<div id="DescSign">
 				<h2 class="w3-left-align w3-border-bottom">Dados</h2>
 				Data : <span id="signDt"></span>
 				<div class="w3-row">
 					<div class="w3-half">
-						Elemento : <span id="signElem"></span><br/>
-						Cor : <span id="signCor"></span><br/>
-						Planeta Regente : <span id="signPlnt"></span><br/>
+						<p>Elemento : <span id="signElem" class="w3-tag w3-round"></span></p>
+						<p>Cor : <span id="signCor"></span></p>
+						<p>Planeta Regente : <span id="signPlnt" style="font-size:22px;"></span></p>
+						Metal :  <span id="signMetal"></span>
+						<br>
 					</div>
 					<div class="w3-half">
-						Símbolo : <span id="signSimb"></span><br/>
-						Pedra : <span id="signPedra"></span><br/>
+						<p>Símbolo : <span id="signSimb"></span></p>
+						<p>Pedra : <span id="signPedra"></span></p>
+						<p>Números : <span id="signNum"></span></p>
+						<p>Dia da Semana : <span id="signSemana"></span></p>
+						Estação : <span id="signEstacao"></span>
+						<br>
 					</div>
 				</div>
 				<h2 class="w3-left-align w3-border-bottom">Descrição</h2>
-				<p>	Sagitário é um dos signos mais positivos do zodíaco.
-					São versáteis e lhes encanta a aventura e o desconhecido. 
-					Têm a mente aberta para novas idéias e experiências e mantêm um atitude otimista inclusive quando as coisas parecem difíceis. 
-					São fiáveis, honestos, bons, sinceros e dispostos a lutar pelas boas causas custe o que custar.</p>
-				<p>	Os sagitarianos costumam acreditar na ética e gostam de seguir os ritos da religião, de um partido político ou de uma organização. 
-					Isto pode levar-lhes a terem certas tendências supersticiosas. Encanta-lhes abarcar novos projetos e aprender sobre coisas novas. 
-					São intuitivos, bons organizadores, generosos e muito cuidadosos, o que lhes converte em bons gestores de situações e projetos.</p>
-				<p>	Alguns sagitarianos têm um gênio forte, que pode aparecer ante situações que para os outros não têm importância. 
-					Também são muito impacientes quando os outros não seguem o mesmo ritmo que eles. 
-					São capazes de sacrificar-se para realizar um objetivo. Isto faz com que algumas vezes eles sejam exigentes demais.</p>
+				<!-- SAGITARIO -->
+				<div class="" id="SIGNDESCR-SAGITARIO">
+					<p>	Sagitário é um dos signos mais positivos do zodíaco.
+						São versáteis e lhes encanta a aventura e o desconhecido. 
+						Têm a mente aberta para novas idéias e experiências e mantêm um atitude otimista inclusive quando as coisas parecem difíceis. 
+						São fiáveis, honestos, bons, sinceros e dispostos a lutar pelas boas causas custe o que custar.</p>
+					<p>	Os sagitarianos costumam acreditar na ética e gostam de seguir os ritos da religião, de um partido político ou de uma organização. 
+						Isto pode levar-lhes a terem certas tendências supersticiosas. Encanta-lhes abarcar novos projetos e aprender sobre coisas novas. 
+						São intuitivos, bons organizadores, generosos e muito cuidadosos, o que lhes converte em bons gestores de situações e projetos.</p>
+					<p>	Alguns sagitarianos têm um gênio forte, que pode aparecer ante situações que para os outros não têm importância. 
+						Também são muito impacientes quando os outros não seguem o mesmo ritmo que eles. 
+						São capazes de sacrificar-se para realizar um objetivo. Isto faz com que algumas vezes eles sejam exigentes demais.</p>
+					<h2 class="w3-left-align w3-border-bottom">Curiosidades</h2>
+						<b>• Parte do Corpo Preferida:</b> Coxas<br>
+						<b>• Gosta de:</b> Flertar, animais de estimação, música pop, viagens internacionais, risos, karaoke, livros e histórias inspiradoras<br>
+						<b>• Não Gosta de:</b> Preconceito, rotinas, regras, estar entediado, levando as coisas muito a sério, as palavras "você não pode"<br>
+						<b>• Desejo Secreto:</b> Fazer as regras<br>
+						<b>• Palavras Místicas:</b> Aventura, viagem, expansão, honestidade, exaustão, sabedoria<br>
+				</div>
 				<h2 class="w3-left-align w3-border-bottom">Relacionamentos</h2>
-					<div class="w3-row">
-						<div class="w3-half">
-							<table>
-								<tr><td><span class="signNome">0</span></td><td><span class="signCompt"></span></td><td>Áries ♈</td></tr>
-								<tr><td><span class="signNome">1</span></td><td><span class="signCompt"></span></td><td>Touro ♉</td></tr>
-								<tr><td><span class="signNome">2</span></td><td><span class="signCompt"></span></td><td>Gemêos ♊</td></tr>
-								<tr><td><span class="signNome">3</span></td><td><span class="signCompt"></span></td><td>Câncer ♋</td></tr>
-								<tr><td><span class="signNome">4</span></td><td><span class="signCompt"></span></td><td>Leão ♌</td></tr>
-								<tr><td><span class="signNome">5</span></td><td><span class="signCompt"></span></td><td>Virgem ♍</td></tr>
-							</table>
-						</div>
+				<div class="w3-row-padding">
+					<div class="w3-half">
+						<table class="compatibilidades">
+							<tr><td class="cpt1"><span class="signNome">0</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">Áries ♈</td></tr>
+							<tr><td class="cpt1"><span class="signNome">1</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">Touro ♉</td></tr>
+							<tr><td class="cpt1"><span class="signNome">2</span></td><td><span class="signCompt"></span></td><td>Gemêos ♊</td></tr>
+							<tr><td class="cpt1"><span class="signNome">3</span></td><td><span class="signCompt"></span></td><td>Câncer ♋</td></tr>
+							<tr><td class="cpt1"><span class="signNome">4</span></td><td><span class="signCompt"></span></td><td>Leão ♌</td></tr>
+							<tr><td class="cpt1"><span class="signNome">5</span></td><td><span class="signCompt"></span></td><td>&nbsp;&nbsp;&nbsp;Virgem ♍&nbsp;&nbsp;&nbsp;</td></tr>
+						</table>
 					</div>
+					<div class="w3-half">
+						<table class="compatibilidades">
+							<tr><td class="cpt1"><span class="signNome">6</span></td><td><span class="signCompt"></span></td><td>Libra ♎</td></tr>
+							<tr><td class="cpt1"><span class="signNome">7</span></td><td><span class="signCompt"></span></td><td>Escorpião ♏</td></tr>
+							<tr><td class="cpt1"><span class="signNome">2</span></td><td><span class="signCompt"></span></td><td>Sagitário ♐</td></tr>
+							<tr><td class="cpt1"><span class="signNome">3</span></td><td><span class="signCompt"></span></td><td>Capricórnio ♑</td></tr>
+							<tr><td class="cpt1"><span class="signNome">4</span></td><td><span class="signCompt"></span></td><td>Aquário ♒</td></tr>
+							<tr><td class="cpt1"><span class="signNome">5</span></td><td><span class="signCompt"></span></td><td>Peixes ♓</td></tr>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<span style="font-family: Wingdings; font-size:20px;"> OK --  BOM --  RUIM --  Normal ♥</span>
+	<span style="font-family: Wingdings; font-size:20px; display:none;"> OK --  BOM --  RUIM --  Normal ♥</span>
 	<script>
 		//Coletando datas
 		var dataAtual = new Date();
@@ -135,8 +176,8 @@
 			}
 			var a = convertDateToUTC(dataInput);
 			var daynum = a.getDOY();
-			alert(a);
-			alert(daynum);
+			//alert(a);
+			//alert(daynum);
 			
 			signo(daynum);
 			
@@ -163,33 +204,39 @@
 				alert("Libra");
 				document.getElementById("signame").innerHTML = "Libra ♎ &nbsp";
 			}
-			if (diaAno365 >= 296 && diaAno365 <= 325) {alert("Escorpião");}
-			if (diaAno365 >= 326 && diaAno365 <= 355) {
-				alert("Sagitário");
-				MeuSigno = document.getElementById("signame").innerHTML = "Sagitário ♐ &nbsp";
-				
+			if (diaAno365 >= 296 && diaAno365 <= 325) {
+				document.getElementById("signame").innerHTML = MeuSigno = "Escorpião ♏ &nbsp";
+				compatibilidade = ["","K","","","","","","K","","","",""];
+				document.getElementById("signElem").innerHTML = "Água <i class='fas fa-burn'></i>";
+				document.getElementById("signElem").className = "w3-tag w3-round w3-blue";
 			}
+			//SAGITARIO -------------------------------------------------------------------------------------------->
+			if (diaAno365 >= 326 && diaAno365 <= 355) {
+				document.getElementById("signame").innerHTML = MeuSigno = "Sagitário ♐ &nbsp";
+				document.getElementById("signDt").innerHTML = "Inicia em 22 de Novembro e encerra dia 21 de Dezembro";
+				document.getElementById("signCor").innerHTML = "Azul Profundo";
+				document.getElementById("signCor").className = "w3-tag w3-round w3-indigo";
+				document.getElementById("signPlnt").innerHTML = "Jupiter ♃";
+				document.getElementById("signMetal").innerHTML = "Estanho";
+				document.getElementById("signSimb").innerHTML = "O Arqueiro ou o Centauro ♐";
+				document.getElementById("signElem").innerHTML = "Fogo <i class='fas fa-fire'></i>";
+				document.getElementById("signElem").className = "w3-tag w3-round w3-red";
+				document.getElementById("signPedra").innerHTML = "Sodalita";
+				document.getElementById("signNum").innerHTML = "3, 5, 7";
+				document.getElementById("signSemana").innerHTML = "QUINTA-FEIRA";
+				document.getElementById("signEstacao").innerHTML = "OUTONO";
+				compatibilidade = ["","K","","","","","","K","","","",""];
+			}
+			//CAPRICORNIO ------------------------------------------------------------------------------------------>
 			if (diaAno365 >  355 || diaAno365 <   19) {alert("Capricórnio");}
 			if (diaAno365 >=  19 && diaAno365 <=  49) {alert("Aquário");}
 			if (diaAno365 >=  50 && diaAno365 <=  79) {alert("Peixes");}
-			// COMPATIBIIDADE
-			<!-- document.getElementById("signame").innerHTML = -->
-				<!-- document.getElementsByClassName("signNome")[0].innerHTML =  -->
-				<!-- document.getElementsByClassName("signNome")[1].innerHTML =  -->
-				<!-- document.getElementsByClassName("signNome")[2].innerHTML =  -->
-				<!-- document.getElementsByClassName("signNome")[3].innerHTML = -->
-				<!-- document.getElementsByClassName("signNome")[4].innerHTML =  -->
-				<!-- document.getElementsByClassName("signNome")[5].innerHTML = MeuSigno; -->
-				<!-- document.getElementsByClassName("signNome").innerHTML = compatibilidade.slice(); -->
-			var x = document.getElementsByClassName("signNome");
-			var i;
-			for (i = 0; i < x.length; i++) {
-				x[i].innerHTML = MeuSigno;
-			}
-			i=0;
-			 MeuSigno;
 			
-			compatibilidade = ["♥","b","C","d","E","z"]
+			// COMPATIBIIDADE
+			for (i = 0; i < document.getElementsByClassName("signNome").length; i++) {
+				document.getElementsByClassName("signNome")[i].innerHTML = MeuSigno;
+			}
+			i=0;			
 			for (i=0; i < document.getElementsByClassName("signCompt").length; i++) {
 				document.getElementsByClassName("signCompt")[i].innerHTML = compatibilidade[i];
 			}
@@ -210,7 +257,35 @@
 		♒ = Aquário
 		♓ = Peixes
 		
+		Alt+9788= ☼ Símbolo de Sol
+		Alt+9790= ☾ Símbolo de Lua
+		Alt+9791= ☿ Símbolo de Mercúrio
+		Alt+9792= ♀ Símbolo de Vênus
+		Alt+9793= ♁
+		Alt+9794= ♂ Símbolo de Marte
+		Alt+9795= ♃ Símbolo de Júpiter
+		Alt+9796=♄ Símbolo de Saturno
+		Alt+9797=♅ Símbolo de Urano
+		Alt+9798=♆ Símbolo de Netuno
+		Alt+9799=♇ Símbolo de Plutão
+		
+		Alt+9729= ☁ Símbolo de nuvem.
+		
+		Alt+10055= ❇
+		
+		
 		document.getElementsByClassName("teste")[0].innerHTML = "teste ok";
+		
+		
+		<!-- document.getElementById("signame").innerHTML = -->
+				<!-- document.getElementsByClassName("signNome")[0].innerHTML =  -->
+				<!-- document.getElementsByClassName("signNome")[1].innerHTML =  -->
+				<!-- document.getElementsByClassName("signNome")[2].innerHTML =  -->
+				<!-- document.getElementsByClassName("signNome")[3].innerHTML = -->
+				<!-- document.getElementsByClassName("signNome")[4].innerHTML =  -->
+				<!-- document.getElementsByClassName("signNome")[5].innerHTML = MeuSigno; -->
+				<!-- document.getElementsByClassName("signNome").innerHTML = compatibilidade.slice(); -->
+		
 		*/
 		
 		
