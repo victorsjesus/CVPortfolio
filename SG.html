@@ -17,12 +17,18 @@
 			border-collapse: separate;
 			border-spacing: 0 4px;
 		}
+		
 		.cpt1 {border-radius: 17px 0 0 17px;}
 		.cpt3 {border-radius: 0 17px 17px 0;}
 		.cpt1, .cpt2, .cpt3 {
 			border: 1px solid lightblue;
 			background-color: lightblue;
 		}
+		
+		.SIGNDESCR {
+			display:none;
+		}
+		
 		.signCompt {
 			font-family: Wingdings; 
 			font-size:28px;
@@ -36,7 +42,7 @@
 		<p>Hoje : <span id="datando">Teste</span></p>
 		<div class="w3-third">
 			<p>
-				Data de Nascimento : <input id="nasc" name="nasc" type="date" style="width:160px;">
+				Data de Nascimento : <input id="nasc" name="nasc" type="date" style="width:160px; text-align:center;">
 				<p><input type="button" onclick='calcular();' value="Verificar"></p>
 			</p>
 			
@@ -70,32 +76,63 @@
 		
 		<!-- COLUNA DIREITA ==================================================================================== -->
 		<div id="ColSign" class="w3-twothird w3-animate-right" style="display:none;">
-			<img src="./imgs/img-SG/icon-sagitario.png" style="float: right; width:150px; height:150px; z-index:1" alt="SIGNO-CIRCULO"></img>
-			<h1 id="signame" class="w3-animate-right w3-right-align w3-border-bottom w3-margin-left" style="z-index:-1;"></h1>
-			<p style="text-align: right;">Você nasceu no <span id="diaNac" style="font-size:20px; color:blue;"></span>° dia do ano.</p>
+			<table style="width:100%;">
+				<tr>
+					<td>
+						<h1 id="signame" class="w3-animate-right w3-right-align w3-border-bottom"></h1>
+						<p style="text-align: right;">Você nasceu no <span id="diaNac" style="font-size:20px; color:blue;"></span>° dia do ano.</p>
+					</td>
+					<td style="width:110px; text-align:right;">
+						<img src="./imgs/img-SG/icon-sagitario.png" style="width:100px; height:100px; z-index:1" alt="SIGNO-CIRCULO" id="signCirculo"></img>
+					</td>
+				</tr>
+			</table>
+			
+			
+			
 			<div id="DescSign">
 				<h2 class="w3-left-align w3-border-bottom">Dados</h2>
 				Data : <span id="signDt"></span>
 				<div class="w3-row">
 					<div class="w3-half">
-						<p>Elemento : <span id="signElem" class="w3-tag w3-round"></span></p>
-						<p>Cor : <span id="signCor"></span></p>
-						<p>Planeta Regente : <span id="signPlnt" style="font-size:22px;"></span></p>
-						Metal :  <span id="signMetal"></span>
+						<p><b>Elemento :</b> <span id="signElem" class="w3-tag w3-round"></span></p>
+						<p><b>Cor :</b> <span id="signCor"></span></p>
+						<p><b>Planeta Regente :</b> <span id="signPlnt" style="font-size:22px;"></span></p>
+						<b>Metal :</b>  <span id="signMetal"></span>
 						<br>
 					</div>
 					<div class="w3-half">
-						<p>Símbolo : <span id="signSimb"></span></p>
-						<p>Pedra : <span id="signPedra"></span></p>
-						<p>Números : <span id="signNum"></span></p>
-						<p>Dia da Semana : <span id="signSemana"></span></p>
-						Estação : <span id="signEstacao"></span>
+						<p><b>Símbolo :</b> <span id="signSimb"></span></p>
+						<p><b>Pedra :</b> <span id="signPedra"></span></p>
+						<p><b>Números :</b> <span id="signNum"></span></p>
+						<p><b>Dia da Semana :</b> <span id="signSemana"></span></p>
+						<b>Estação :</b> <span id="signEstacao"></span>
 						<br>
 					</div>
 				</div>
 				<h2 class="w3-left-align w3-border-bottom">Descrição</h2>
+				<!-- LIBRA -->
+				<div class="SIGNDESCR" id="SIGNDESCR-LIBRA">
+					<p>	Libra é um dos signos mais agradáveis do zodíaco, é impossível não gostar deles. 
+						Amam e precisam socializar, cativando todos ao seu redor, quando se encontra com os amigos, é sempre uma festa. 
+						Eles tem uma vivacidade não encontrada em nenhum outro signo, sabem levar os relacionamentos muito bem.
+						Libra é refinado, prioriza o sexo no relacionamento mas não tanto quanto uma boa conversa.</p>
+					<p>	Sua prioridade é manter uma ambiente sereno, então fazem de tudo para não iniciar um conflito, fugindo das brigas. 
+						Gostam de harmonia e tentam mantê-la custe o que custar, deixando de lado até mesmo algumas de suas responsabilidades, 
+						dentro os signos e características, libra não se poupa quando precisam ajudar outros.</p>
+					<p>	Eles sempre pensam muito bem antes de agir, listando todos os prós e contras de cada situação, 
+						para escolher o melhor caminho. 
+						Às vezes pensar demais faz com que eles não consigam tomar decisões muito grandes, os librianos são conhecidos como 
+						principais características dos signos o fato de achar difícil tomar uma posição.</p>
+					<h2 class="w3-left-align w3-border-bottom">Curiosidades</h2>
+						<b>• Parte do Corpo Preferida:</b> Parte inferior das costas<br>
+						<b>• Gosta de:</b> Concertos em locais grandes, poesia, jóias caras, roupas de grife e comida rica.<br>
+						<b>• Não Gosta de:</b> Pessoas aborrecidas ou práticas, agressores, sendo pressionados a decidir, dizendo boa noite, ouvindo a palavra "talvez".<br>
+						<b>• Desejo Secreto:</b> Amar e ser amado em troca<br>
+						<b>• Palavras Místicas:</b> Compromisso, parceria, igualdade, equilíbrio, mutualidade, equidade<br>
+				</div>
 				<!-- SAGITARIO -->
-				<div class="" id="SIGNDESCR-SAGITARIO">
+				<div class="SIGNDESCR" id="SIGNDESCR-SAGITARIO">
 					<p>	Sagitário é um dos signos mais positivos do zodíaco.
 						São versáteis e lhes encanta a aventura e o desconhecido. 
 						Têm a mente aberta para novas idéias e experiências e mantêm um atitude otimista inclusive quando as coisas parecem difíceis. 
@@ -119,20 +156,20 @@
 						<table class="compatibilidades">
 							<tr><td class="cpt1"><span class="signNome">0</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">Áries ♈</td></tr>
 							<tr><td class="cpt1"><span class="signNome">1</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">Touro ♉</td></tr>
-							<tr><td class="cpt1"><span class="signNome">2</span></td><td><span class="signCompt"></span></td><td>Gemêos ♊</td></tr>
-							<tr><td class="cpt1"><span class="signNome">3</span></td><td><span class="signCompt"></span></td><td>Câncer ♋</td></tr>
-							<tr><td class="cpt1"><span class="signNome">4</span></td><td><span class="signCompt"></span></td><td>Leão ♌</td></tr>
-							<tr><td class="cpt1"><span class="signNome">5</span></td><td><span class="signCompt"></span></td><td>&nbsp;&nbsp;&nbsp;Virgem ♍&nbsp;&nbsp;&nbsp;</td></tr>
+							<tr><td class="cpt1"><span class="signNome">2</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">Gemêos ♊</td></tr>
+							<tr><td class="cpt1"><span class="signNome">3</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">Câncer ♋</td></tr>
+							<tr><td class="cpt1"><span class="signNome">4</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">Leão ♌</td></tr>
+							<tr><td class="cpt1"><span class="signNome">5</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">&nbsp;&nbsp;&nbsp;Virgem ♍&nbsp;&nbsp;&nbsp;</td></tr>
 						</table>
 					</div>
 					<div class="w3-half">
 						<table class="compatibilidades">
-							<tr><td class="cpt1"><span class="signNome">6</span></td><td><span class="signCompt"></span></td><td>Libra ♎</td></tr>
-							<tr><td class="cpt1"><span class="signNome">7</span></td><td><span class="signCompt"></span></td><td>Escorpião ♏</td></tr>
-							<tr><td class="cpt1"><span class="signNome">2</span></td><td><span class="signCompt"></span></td><td>Sagitário ♐</td></tr>
-							<tr><td class="cpt1"><span class="signNome">3</span></td><td><span class="signCompt"></span></td><td>Capricórnio ♑</td></tr>
-							<tr><td class="cpt1"><span class="signNome">4</span></td><td><span class="signCompt"></span></td><td>Aquário ♒</td></tr>
-							<tr><td class="cpt1"><span class="signNome">5</span></td><td><span class="signCompt"></span></td><td>Peixes ♓</td></tr>
+							<tr><td class="cpt1"><span class="signNome">6</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">Libra ♎</td></tr>
+							<tr><td class="cpt1"><span class="signNome">7</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">Escorpião ♏</td></tr>
+							<tr><td class="cpt1"><span class="signNome">2</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">Sagitário ♐</td></tr>
+							<tr><td class="cpt1"><span class="signNome">3</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">Capricórnio ♑</td></tr>
+							<tr><td class="cpt1"><span class="signNome">4</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">Aquário ♒</td></tr>
+							<tr><td class="cpt1"><span class="signNome">5</span></td><td class="cpt2"><span class="signCompt"></span></td><td class="cpt3">Peixes ♓</td></tr>
 						</table>
 					</div>
 				</div>
@@ -156,6 +193,7 @@
 		// FUNÇÕES ================================================================================================================
 			
 		function calcular () {
+			//Variaveis
 			var dataInput = (document.getElementById('nasc').value.split('-'));
 			dataInput = (dataInput[1] + '/' + dataInput[2] + '/' + dataInput[0]);
 			dataInput = new Date(dataInput);
@@ -178,7 +216,10 @@
 			var daynum = a.getDOY();
 			//alert(a);
 			//alert(daynum);
-			
+			//Limpeza Pré-SIGNOS
+			for (i = 0; i < document.getElementsByClassName("SIGNDESCR").length; i++) {
+				document.getElementsByClassName("SIGNDESCR")[i].style.display = 'none';
+			}
 			signo(daynum);
 			
 		}
@@ -199,11 +240,28 @@
 			if (diaAno365 >= 141 && diaAno365 <= 172) {alert("Gêmeos");}
 			if (diaAno365 >= 173 && diaAno365 <= 203) {alert("Câncer");}
 			if (diaAno365 >= 204 && diaAno365 <= 234) {alert("Leão");}
+			//VIRGEM ----------------------------------------------------------------------------------------------->
 			if (diaAno365 >= 235 && diaAno365 <= 265) {alert("Virgem");}
+			//LIBRA ------------------------------------------------------------------------------------------------>
 			if (diaAno365 >= 266 && diaAno365 <= 295) {
-				alert("Libra");
-				document.getElementById("signame").innerHTML = "Libra ♎ &nbsp";
+				document.getElementById("SIGNDESCR-LIBRA").style.display = 'block';
+				document.getElementById("signCirculo").src = './imgs/img-SG/icon-libra.png'
+				document.getElementById("signame").innerHTML = MeuSigno = "Libra ♎ &nbsp";
+				document.getElementById("signDt").innerHTML = "Inicia em de 23 de Setembro e encerra dia 22 de Outubro";
+				document.getElementById("signCor").innerHTML = "ROSA, BRANCO";
+				document.getElementById("signCor").className = "w3-tag w3-round w3-pink";
+				document.getElementById("signPlnt").innerHTML = "Vênus ♀";
+				document.getElementById("signMetal").innerHTML = "Cobre";
+				document.getElementById("signSimb").innerHTML = "A balança da justiça ♎";
+				document.getElementById("signElem").innerHTML = "Ar <i class='fas fa-cloud'></i>";
+				document.getElementById("signElem").className = "w3-tag w3-round w3-blue-gray w3-text-white";
+				document.getElementById("signPedra").innerHTML = "Jade";
+				document.getElementById("signNum").innerHTML = "6, 9";
+				document.getElementById("signSemana").innerHTML = "SEXTA-FEIRA";
+				document.getElementById("signEstacao").innerHTML = "OUTONO";
+				compatibilidade = ["","K","","","","","","K","","","",""];
 			}
+			//ESCORPIÃO -------------------------------------------------------------------------------------------->
 			if (diaAno365 >= 296 && diaAno365 <= 325) {
 				document.getElementById("signame").innerHTML = MeuSigno = "Escorpião ♏ &nbsp";
 				compatibilidade = ["","K","","","","","","K","","","",""];
@@ -212,6 +270,8 @@
 			}
 			//SAGITARIO -------------------------------------------------------------------------------------------->
 			if (diaAno365 >= 326 && diaAno365 <= 355) {
+				document.getElementById("SIGNDESCR-SAGITARIO").style.display = 'block';
+				document.getElementById("signCirculo").src = './imgs/img-SG/icon-sagitario.png'
 				document.getElementById("signame").innerHTML = MeuSigno = "Sagitário ♐ &nbsp";
 				document.getElementById("signDt").innerHTML = "Inicia em 22 de Novembro e encerra dia 21 de Dezembro";
 				document.getElementById("signCor").innerHTML = "Azul Profundo";
@@ -242,6 +302,8 @@
 			}
 			
 		}
+		
+		
 		
 		/*
 		♈ = Áries
