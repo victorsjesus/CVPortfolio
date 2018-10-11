@@ -11,18 +11,27 @@
 	<!-- https://fontawesome.com/icons?d=gallery&m=free -->
 	
 	<style rel="stylesheet" type="text/css">
+		body{
+			background-image: url("./imgs/img-SG/bg-SG.jpg");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			width: 100%;
+			color: white;
+		}
+		
 		.compatibilidades {
 			width:100%;
 			text-align: center;
 			border-collapse: separate;
 			border-spacing: 0 4px;
+			font-size: 18px;
 		}
 		
 		.cpt1 {border-radius: 17px 0 0 17px;}
 		.cpt3 {border-radius: 0 17px 17px 0;}
 		.cpt1, .cpt2, .cpt3 {
-			border: 1px solid lightblue;
-			background-color: lightblue;
+			border: 1px solid blueviolet;
+			background-color: blueviolet;
 		}
 		
 		.SIGNDESCR {
@@ -36,7 +45,7 @@
 	</style>
 	
 </head>
-<body style="width: 100%;">
+<body style="">
 	<pre style="border: 1px solid; background-color: lightgray; margin: 0; font-size:10px;">-- Em Construção : 08.10.18 11:45</pre>
 	<div class="w3-row-padding">
 		<p>Hoje : <span id="datando">Teste</span></p>
@@ -80,7 +89,7 @@
 				<tr>
 					<td>
 						<h1 id="signame" class="w3-animate-right w3-right-align w3-border-bottom"></h1>
-						<p style="text-align: right;">Você nasceu no <span id="diaNac" style="font-size:20px; color:blue;"></span>° dia do ano.</p>
+						<p style="text-align: right;">Você nasceu no <span id="diaNac" style="font-size:20px; color:cyan;"></span>° dia do ano.</p>
 					</td>
 					<td style="width:110px; text-align:right;">
 						<img src="./imgs/img-SG/icon-sagitario.png" style="width:100px; height:100px; z-index:1" alt="SIGNO-CIRCULO" id="signCirculo"></img>
@@ -111,6 +120,37 @@
 					</div>
 				</div>
 				<h2 class="w3-left-align w3-border-bottom">Descrição</h2>
+				<!-- LEÃO -->
+				<div class="SIGNDESCR" id="SIGNDESCR-LEAO">
+					<p>	O Leão simboliza esse signo, ele é o rei (ou a rainha) da selva e é um símbolo apropriado, 
+						já que eles se consideram os governantes de seu universo (e o zodíaco também!). <br>
+						Como os leões, eles tende a ser dignos e fortes, e é essa sensação de poder que lhes permite fazer as coisas. 
+						Uma pessoa Leonina em sua equipe é uma coisa boa, 
+						já que os Leões estão sempre ansiosos para ver seus projetos até à sua conclusão. 
+						Colocar essas pessoas no leme também é bom, já que são líderes naturais. 
+						Eles podem enrolar algumas penas ao longo do caminho, no entanto, 
+						uma vez que também podem ser dominantes e um pouco autocráticas. 
+						Eles são bem organizados, idealistas e têm a habilidade de inspirar os outros.</p>
+					<p> São marcados pela impulsividade, você dificilmente os verá refletindo sobre as decisões que irão tomar.
+						Outra das suas maiores características é a independência. 
+						Contam apenas com eles mesmos para chegarem onde querem na vida. 
+						Pessoas de Leão são extremamente auto-suficiente e gostam da sua liberdade. 
+						Também são dotados de energia e sinceridade, até demais.</p>
+					<p> Quem é regido por esta personalidade não gasta muito tempo deprimido, 
+						está sempre acompanhado de amigos, batalha pelos seus sonhos e se decepciona muito quanto não dão certo. 
+						São leias e, apesar de se apaixonar com dificuldade – o que os podem tornar um pouco galinhas – 
+						dão a vida e o coração quando são cativados por alguém.<br>
+						Se tem alguém que gosta de aproveitar a vida são eles,  principalmente no trato consigo mesmos. 
+						Muitas vezes podem ser um pouco impulsivos,  tomando atitudes precipitadas. 
+						Por outro lado, não negam aprendizado e podem ser até um pouco sábios – os conselheiros do grupo.
+					<h2 class="w3-left-align w3-border-bottom">Curiosidades</h2>
+						<b>• Parte do Corpo Preferida:</b> Parte superior das costas<br>
+						<b>• Gosta de:</b> Teatros, câmeras, DVDs, sobremesas ricas, rosas vermelhas, troca de presentes, canto, carinho, 
+							elogios, ótimas roupas.<br>
+						<b>• Não Gosta de:</b> Ser ignorado, medalhas de prata (em vez de ouro), comida sem graça, estar sozinho, dizer adeus.<br>
+						<b>• Desejo Secreto:</b> Governar o mundo<br>
+						<b>• Palavras Místicas:</b> Paixão, romance, expressão, drama, brincadeira, coragem, lealdade<br>
+				</div>
 				<!-- LIBRA -->
 				<div class="SIGNDESCR" id="SIGNDESCR-LIBRA">
 					<p>	Libra é um dos signos mais agradáveis do zodíaco, é impossível não gostar deles. 
@@ -239,15 +279,33 @@
 			if (diaAno365 >= 110 && diaAno365 <= 140) {alert("Touro");}
 			if (diaAno365 >= 141 && diaAno365 <= 172) {alert("Gêmeos");}
 			if (diaAno365 >= 173 && diaAno365 <= 203) {alert("Câncer");}
-			if (diaAno365 >= 204 && diaAno365 <= 234) {alert("Leão");}
+			//LEÃO ------------------------------------------------------------------------------------------------->
+			if (diaAno365 >= 204 && diaAno365 <= 234) {
+				document.getElementById("SIGNDESCR-LEAO").style.display = 'block';
+				document.getElementById("signCirculo").src = './imgs/img-SG/icon-leao.png';
+				document.getElementById("signame").innerHTML = MeuSigno = "Leão ♌ &nbsp";
+				document.getElementById("signDt").innerHTML = "Inicia em 23 de Julho e encerra dia 22 de Agosto";
+				document.getElementById("signCor").innerHTML = "PRATA, BRANCO";
+				document.getElementById("signCor").className = "w3-tag w3-round w3-light-grey";
+				document.getElementById("signPlnt").innerHTML = "Sol ☼";
+				document.getElementById("signMetal").innerHTML = "Ouro";
+				document.getElementById("signSimb").innerHTML = "O Leão ♌";
+				document.getElementById("signElem").innerHTML = "Fogo <i class='fas fa-fire'></i>";
+				document.getElementById("signElem").className = "w3-tag w3-round w3-red";
+				document.getElementById("signPedra").innerHTML = "Quartzo Hialino";
+				document.getElementById("signNum").innerHTML = "8, 9, 2";
+				document.getElementById("signSemana").innerHTML = "DOMINGO";
+				document.getElementById("signEstacao").innerHTML = "VERÃO";
+				compatibilidade = ["","K","","K","","","","","","","",""];
+			}
 			//VIRGEM ----------------------------------------------------------------------------------------------->
 			if (diaAno365 >= 235 && diaAno365 <= 265) {alert("Virgem");}
 			//LIBRA ------------------------------------------------------------------------------------------------>
 			if (diaAno365 >= 266 && diaAno365 <= 295) {
 				document.getElementById("SIGNDESCR-LIBRA").style.display = 'block';
-				document.getElementById("signCirculo").src = './imgs/img-SG/icon-libra.png'
+				document.getElementById("signCirculo").src = './imgs/img-SG/icon-libra.png';
 				document.getElementById("signame").innerHTML = MeuSigno = "Libra ♎ &nbsp";
-				document.getElementById("signDt").innerHTML = "Inicia em de 23 de Setembro e encerra dia 22 de Outubro";
+				document.getElementById("signDt").innerHTML = "Inicia em 23 de Setembro e encerra dia 22 de Outubro";
 				document.getElementById("signCor").innerHTML = "ROSA, BRANCO";
 				document.getElementById("signCor").className = "w3-tag w3-round w3-pink";
 				document.getElementById("signPlnt").innerHTML = "Vênus ♀";
@@ -259,7 +317,7 @@
 				document.getElementById("signNum").innerHTML = "6, 9";
 				document.getElementById("signSemana").innerHTML = "SEXTA-FEIRA";
 				document.getElementById("signEstacao").innerHTML = "OUTONO";
-				compatibilidade = ["","K","","","","","","K","","","",""];
+				compatibilidade = ["","K","","K","","K","","","","K","",""];
 			}
 			//ESCORPIÃO -------------------------------------------------------------------------------------------->
 			if (diaAno365 >= 296 && diaAno365 <= 325) {
@@ -271,7 +329,7 @@
 			//SAGITARIO -------------------------------------------------------------------------------------------->
 			if (diaAno365 >= 326 && diaAno365 <= 355) {
 				document.getElementById("SIGNDESCR-SAGITARIO").style.display = 'block';
-				document.getElementById("signCirculo").src = './imgs/img-SG/icon-sagitario.png'
+				document.getElementById("signCirculo").src = './imgs/img-SG/icon-sagitario.png';
 				document.getElementById("signame").innerHTML = MeuSigno = "Sagitário ♐ &nbsp";
 				document.getElementById("signDt").innerHTML = "Inicia em 22 de Novembro e encerra dia 21 de Dezembro";
 				document.getElementById("signCor").innerHTML = "Azul Profundo";
