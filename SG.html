@@ -46,7 +46,7 @@
 	
 </head>
 <body style="">
-	<pre style="border: 1px solid; background-color: lightgray; margin: 0; font-size:10px;">-- Em Construção : 08.10.18 11:45</pre>
+	<pre style="border: 1px solid; background-color: lightgray; margin: 0; font-size:10px; color:black">-- Em Construção : 08.10.18 11:45</pre>
 	<div class="w3-row-padding">
 		<p>Hoje : <span id="datando">Teste</span></p>
 		<div class="w3-third">
@@ -97,8 +97,6 @@
 				</tr>
 			</table>
 			
-			
-			
 			<div id="DescSign">
 				<h2 class="w3-left-align w3-border-bottom">Dados</h2>
 				Data : <span id="signDt"></span>
@@ -120,6 +118,7 @@
 					</div>
 				</div>
 				<h2 class="w3-left-align w3-border-bottom">Descrição</h2>
+				<div style="border: 1px solid; width:200px; height:200px; float:right;"><img src="./imgs/img-SG/qd-sagitario.jpg" alt="SIGNO-QUADRADO" id="signQuadrado" style="width:200px; height:200px;"></img></div>
 				<!-- LEÃO -->
 				<div class="SIGNDESCR" id="SIGNDESCR-LEAO">
 					<p>	O Leão simboliza esse signo, ele é o rei (ou a rainha) da selva e é um símbolo apropriado, 
@@ -171,9 +170,19 @@
 						<b>• Desejo Secreto:</b> Amar e ser amado em troca<br>
 						<b>• Palavras Místicas:</b> Compromisso, parceria, igualdade, equilíbrio, mutualidade, equidade<br>
 				</div>
+				<!-- ESCORPIÃO -->
+				<div class="SIGNDESCR" id="SIGNDESCR-ESCORPIAO">
+					<p>	ESCORPIAO.</p>
+					<h2 class="w3-left-align w3-border-bottom">Curiosidades</h2>
+						<b>• Parte do Corpo Preferida:</b> Coxas<br>
+						<b>• Gosta de:</b> Flertar, animais de estimação, música pop, viagens internacionais, risos, karaoke, livros e histórias inspiradoras<br>
+						<b>• Não Gosta de:</b> Preconceito, rotinas, regras, estar entediado, levando as coisas muito a sério, as palavras "você não pode"<br>
+						<b>• Desejo Secreto:</b> Fazer as regras<br>
+						<b>• Palavras Místicas:</b> Aventura, viagem, expansão, honestidade, exaustão, sabedoria<br>
+				</div>
 				<!-- SAGITARIO -->
 				<div class="SIGNDESCR" id="SIGNDESCR-SAGITARIO">
-					<p>	Sagitário é um dos signos mais positivos do zodíaco.
+					<p>	Sagitário é um dos signos mais positivos do zodíaco.<br>
 						São versáteis e lhes encanta a aventura e o desconhecido. 
 						Têm a mente aberta para novas idéias e experiências e mantêm um atitude otimista inclusive quando as coisas parecem difíceis. 
 						São fiáveis, honestos, bons, sinceros e dispostos a lutar pelas boas causas custe o que custar.</p>
@@ -189,6 +198,28 @@
 						<b>• Não Gosta de:</b> Preconceito, rotinas, regras, estar entediado, levando as coisas muito a sério, as palavras "você não pode"<br>
 						<b>• Desejo Secreto:</b> Fazer as regras<br>
 						<b>• Palavras Místicas:</b> Aventura, viagem, expansão, honestidade, exaustão, sabedoria<br>
+						<b>• Cavalheiro de Ouro:</b> Aiolos
+				</div>
+				<!-- AQUARIO -->
+				<div class="SIGNDESCR" id="SIGNDESCR-AQUARIO">
+					<p>	Conhecidos por serem pessoas humanitárias e muito simpáticas.<br>
+						Aquarianos são leais, originais e possuem uma personalidade única. 
+						Gostam de contrariar, são teimosos e não costumam aceitar a opinião alheia que não seja condizente com a deles.</p>
+					<p>	Lutam até o final pelas causas que acreditam. Sonham alto e possuem uma grande quantidade de amigos. 
+						Ele também fica a espreita analisando quais as possibilidades de determinado assunto vingar, 
+						caso percebem que isso não passa de uma mera imitação ou cópia, irão se afastar..</p>
+					<p> São conhecidos por serem pessoas que fazem boas análises das situação complicadas.
+						Tudo isso por verem os dois lados do que está acontecendo. 
+						Por isso é considerado o signo mais tolerante e sem algum preconceito de todo o Zodíaco.</p>
+					<p>	Por serem pessoas que priorizam o lado racional, as vezes podem parecer insensíveis ou que são frios. 
+						Porém, quando se apaixonam se deixam envolver completamente com o par. 
+						É uma pessoa fiel porém precisa de espaço e muita liberdade.</p>
+					<h2 class="w3-left-align w3-border-bottom">Curiosidades</h2>
+						<b>• Parte do Corpo Preferida:</b> Tornozelos<br>
+						<b>• Gosta de:</b> Programação de computadores, ensino, esportes de equipe, qualquer coisa com motivo ou missão, filmes independentes<br>
+						<b>• Não Gosta de:</b> Injúria, rainhas de drama, sensação de isolamento, devido dinheiro ou favores, ter que escolher apenas uma coisa<br>
+						<b>• Desejo Secreto:</b> Experimentar Liberdade Total<br>
+						<b>• Palavras Místicas:</b> Amabilidade, Excentricidade, Trabalho em equipe, Humanitarismo, Tecnologia, Futurista, Grupos<br>
 				</div>
 				<h2 class="w3-left-align w3-border-bottom">Relacionamentos</h2>
 				<div class="w3-row-padding">
@@ -306,8 +337,7 @@
 				document.getElementById("signCirculo").src = './imgs/img-SG/icon-libra.png';
 				document.getElementById("signame").innerHTML = MeuSigno = "Libra ♎ &nbsp";
 				document.getElementById("signDt").innerHTML = "Inicia em 23 de Setembro e encerra dia 22 de Outubro";
-				document.getElementById("signCor").innerHTML = "ROSA, BRANCO";
-				document.getElementById("signCor").className = "w3-tag w3-round w3-pink";
+				document.getElementById("signCor").innerHTML = "<span class='w3-tag w3-round w3-pink'>ROSA</span>, <span class='w3-tag w3-round w3-white'>BRANCO</span>";
 				document.getElementById("signPlnt").innerHTML = "Vênus ♀";
 				document.getElementById("signMetal").innerHTML = "Cobre";
 				document.getElementById("signSimb").innerHTML = "A balança da justiça ♎";
@@ -321,10 +351,24 @@
 			}
 			//ESCORPIÃO -------------------------------------------------------------------------------------------->
 			if (diaAno365 >= 296 && diaAno365 <= 325) {
+				document.getElementById("SIGNDESCR-ESCORPIAO").style.display = 'block';
+				document.getElementById("signCirculo").src = './imgs/img-SG/icon-escorpiao.png';
 				document.getElementById("signame").innerHTML = MeuSigno = "Escorpião ♏ &nbsp";
-				compatibilidade = ["","K","","","","","","K","","","",""];
+				document.getElementById("signDt").innerHTML = "Inicia em 23 de Outubro e encerra dia 21 de Novembro";
+				document.getElementById("signCor").innerHTML = "<span class='w3-tag w3-round w3-red'>VERMELHO</span>, <span class='w3-tag w3-round w3-indigo'>AZUL MARINHO</span>";
+				document.getElementById("signCor").className = "";
+				document.getElementById("signPlnt").innerHTML = "Plutão ♇";
+				document.getElementById("signMetal").innerHTML = "FERRO";
+				document.getElementById("signSimb").innerHTML = "O Escorpião ♏";
 				document.getElementById("signElem").innerHTML = "Água <i class='fas fa-burn'></i>";
 				document.getElementById("signElem").className = "w3-tag w3-round w3-blue";
+				document.getElementById("signPedra").innerHTML = "AÇO";
+				document.getElementById("signNum").innerHTML = "1, 2, 4";
+				document.getElementById("signSemana").innerHTML = "TERÇA-FEIRA";
+				document.getElementById("signEstacao").innerHTML = "OUTONO";
+				
+				//compatibilidade = ["","K","","","","","","K","","","",""];
+				
 			}
 			//SAGITARIO -------------------------------------------------------------------------------------------->
 			if (diaAno365 >= 326 && diaAno365 <= 355) {
@@ -347,7 +391,26 @@
 			}
 			//CAPRICORNIO ------------------------------------------------------------------------------------------>
 			if (diaAno365 >  355 || diaAno365 <   19) {alert("Capricórnio");}
-			if (diaAno365 >=  19 && diaAno365 <=  49) {alert("Aquário");}
+			//AQUARIO ---------------------------------------------------------------------------------------------->
+			if (diaAno365 >=  19 && diaAno365 <=  49) {
+				document.getElementById("SIGNDESCR-AQUARIO").style.display = 'block';
+				document.getElementById("signCirculo").src = './imgs/img-SG/icon-aquario.png';
+				document.getElementById("signame").innerHTML = MeuSigno = "Aquario ♒ &nbsp";
+				document.getElementById("signDt").innerHTML = "Inicia em 20 de Janeiro e encerra em 18 de Fevereiro";
+				document.getElementById("signCor").innerHTML = "<span class='w3-tag w3-round w3-blue'>AZUL</span>, <span class='w3-tag w3-round  w3-dark-grey'>CINZA</span>";
+				document.getElementById("signCor").className = "";
+				document.getElementById("signPlnt").innerHTML = "Úrano ♅";
+				document.getElementById("signMetal").innerHTML = "Platina";
+				document.getElementById("signSimb").innerHTML = "Duas Ondas ♒";
+				document.getElementById("signElem").innerHTML = "Ar <i class='fas fa-cloud'></i>";
+				document.getElementById("signElem").className = "w3-tag w3-round w3-blue-gray w3-text-white";
+				document.getElementById("signPedra").innerHTML = "Água Marinha";
+				document.getElementById("signNum").innerHTML = "1, 7, 3";
+				document.getElementById("signSemana").innerHTML = "QUARTA-FEIRA";
+				document.getElementById("signEstacao").innerHTML = "INVERNO";
+				compatibilidade = ["","K","","","","K","","K","","","",""];
+			}
+			//PEIXES ---------------------------------------------------------------------------------------------->
 			if (diaAno365 >=  50 && diaAno365 <=  79) {alert("Peixes");}
 			
 			// COMPATIBIIDADE
