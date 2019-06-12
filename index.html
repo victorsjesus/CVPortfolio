@@ -17,13 +17,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<!-- https://fontawesome.com/icons?d=gallery&m=free -->
 	
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
-	
-	
+		
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
@@ -91,8 +89,7 @@
 			line-height: 1.6;
 		}
 
-		/* Turn off parallax scrolling for tablets and phones */
-			@media only screen and (max-device-width: 1024px) {
+		@media only screen and (max-device-width: 1024px) {
 			.bgimg-1, .bgimg-2, .bgimg-3 {
 			background-attachment: scroll;
 			}
@@ -121,8 +118,8 @@
 			-webkit-animation-name: aparecerLeft; /* Safari 4.0 - 8.0 */
             animation-name: aparecerLeft;
 		}
-		/* Standard syntax */
-        @keyframes aparecerLeft {
+		
+		@keyframes aparecerLeft {
             0%   	{left:-50%;}
             20% 	{left:0px;}
 			80%		{left:0px;}
@@ -143,8 +140,8 @@
 			-webkit-animation-name: aparecerGreat; /* Safari 4.0 - 8.0 */
             animation-name: aparecerGreat;
 		}
-		/* Standard syntax */
-        @keyframes aparecerGreat {
+		
+		@keyframes aparecerGreat {
             0%   	{left:-50%;}
             20% 	{left:50%;}
 			80%		{left:50%}
@@ -166,7 +163,6 @@
 			width: 400px;
 		}
 		
-		
 		.div-circle {
 			background-color: gray;
 			height: 40px;
@@ -175,8 +171,7 @@
 			display: none;
 			align-items: center;
 			float: left;
-			margin: 3px;
-			
+			margin: 3px;	
 		}
 		
 		.btn-circle {
@@ -418,23 +413,6 @@
 		
 		<!-- ================================================================================================== -->
 		<!-- === NES CONTROLE ================================================================================= -->
-		<!-- /**  * Font-definition & partial css reset. Only Woff, since we lack support for IE8 anyway. */ -->
-		<!-- @font-face { -->
-			<!-- font-family: 'Pretendo'; -->
-			<!-- src: url('http://attackmupp.com/resources/nespad/Pretendo.woff') format('woff'); -->
-		<!-- } -->
-
-		<!-- @font-face { -->
-			<!-- font-family: 'NESController'; -->
-			<!-- src: url('http://attackmupp.com/resources/nespad/nes_controller_cad_mrshrike.woff') format('woff'); -->
-		<!-- } -->
-		<!-- * { -->
-			<!-- box-sizing: border-box; -->
-			<!-- font: inherit; -->
-		<!-- } -->
-
-		<!-- body { font: 15px/2 nescontroller,sans-serif; } -->
-		
 		.button {	outline: none; transition: all .05s ease;	}
 		#nespad {
 			margin: 20px auto;
@@ -611,137 +589,146 @@
         #left:before { border-color: #444 #151515 transparent transparent; }
         #left:after { border-color: transparent #151515 #444 #444; }
 
-.menu-pane {
-  display: inline-block;
-  vertical-align: top;
-  width: 11.5em;
-  height: 100%;
-  overflow: hidden;
-  overflow: -moz-hidden-unscrollable; /* normal hidden doesn't work in firefox here */
-  border: 0 solid rgba(100, 100, 100, .8);
-  border-width: .1em 0; }
-  .menu-pane .labels {
-    border-radius: .3em;
-    height: 2em;
-    background-color: #888;
-    text-transform: uppercase;
-    padding: 0 .8em;
-    margin-top: 5.2em;
-    box-shadow: 0 -2.7em #888, 0 -5.4em #888, 0 7em #888; }
-    .menu-pane label {
-      line-height: 1.4;
-      font-size: 1.3em;
-    }
-    .menu-pane .buttons {
-      margin: 0.67em 0;
-      width: 100%;
-      height: 3.6em;
-      border-radius: .3em;
-      background-color: #ddd;
-      text-transform: uppercase;
-      padding: 1.3em;
-      word-spacing: 2em;
-      position:relative;
-    }
-    .menu-pane .buttons:before { /* indentation */
-      content: "";
-      position: absolute;
-      top: .4em;
-      right: .4em;
-      bottom: .4em;
-      left: .4em;
-      border: .3em solid transparent;
-      border-color: #b1b1b1 #f6f6f6 #eee #bbb;
-      box-shadow: 1em .8em .8em -1em hsla(0, 0%, 0%, 0.3) inset; }
-      .menu-pane .button {
-        position: relative;
-        overflow: hidden;
-        top: -.3em;
-        left: -.16em;
-        height: 1.2em;
-        width: 3.3em;
-        border: 0;
-        border-radius: 1em;
-        background-color: #2a2a2a;
-        color: #2a2a2a;
-        box-shadow:
-          .04em .08em 0 hsla(0, 0%, 26%, 1), /* 3d */
-          .08em .15em 0 hsla(0, 0%, 23%, 1),
-          .12em .23em 0 hsla(0, 0%, 20%, 1),
-          .16em .3em 0 hsla(0, 0%, 17%, 1),
-          .16em .3em 0 .15em hsla(0, 0%, 0%, .9), /* hole */
-          .1em .075em .5em rgba(0, 0, 0, .3), /* shadow */
-          .3em .15em .5em rgba(0, 0, 0, .3),
-          .6em .2em .5em rgba(0, 0, 0, .3),
-          1.2em .4em .5em rgba(0, 0, 0, .3);
+		.menu-pane {
+			display: inline-block;
+			vertical-align: top;
+			width: 11.5em;
+			height: 100%;
+			overflow: hidden;
+			overflow: -moz-hidden-unscrollable; /* normal hidden doesn't work in firefox here */
+			border: 0 solid rgba(100, 100, 100, .8);
+			border-width: .1em 0; 
+		}
+		.menu-pane .labels {
+			border-radius: .3em;
+			height: 2em;
+			background-color: #888;
+			text-transform: uppercase;
+			padding: 0 .8em;
+			margin-top: 5.2em;
+			box-shadow: 0 -2.7em #888, 0 -5.4em #888, 0 7em #888; 
+		}
+		.menu-pane label {
+			line-height: 1.4;
+			font-size: 1.3em;
+		}
+		.menu-pane .buttons {
+			margin: 0.67em 0;
+			width: 100%;
+			height: 3.6em;
+			border-radius: .3em;
+			background-color: #ddd;
+			text-transform: uppercase;
+			padding: 1.3em;
+			word-spacing: 2em;
+			position:relative;
+		}
+		.menu-pane .buttons:before { /* indentation */
+		  content: "";
+		  position: absolute;
+		  top: .4em;
+		  right: .4em;
+		  bottom: .4em;
+		  left: .4em;
+		  border: .3em solid transparent;
+		  border-color: #b1b1b1 #f6f6f6 #eee #bbb;
+		  box-shadow: 1em .8em .8em -1em hsla(0, 0%, 0%, 0.3) inset; 
+		}
+		.menu-pane .button {
+			position: relative;
+			overflow: hidden;
+			top: -.3em;
+			left: -.16em;
+			height: 1.2em;
+			width: 3.3em;
+			border: 0;
+			border-radius: 1em;
+			background-color: #2a2a2a;
+			color: #2a2a2a;
+			box-shadow:
+			.04em .08em 0 hsla(0, 0%, 26%, 1), /* 3d */
+			.08em .15em 0 hsla(0, 0%, 23%, 1),
+			.12em .23em 0 hsla(0, 0%, 20%, 1),
+			.16em .3em 0 hsla(0, 0%, 17%, 1),
+			.16em .3em 0 .15em hsla(0, 0%, 0%, .9), /* hole */
+			.1em .075em .5em rgba(0, 0, 0, .3), /* shadow */
+			.3em .15em .5em rgba(0, 0, 0, .3),
+			.6em .2em .5em rgba(0, 0, 0, .3),
+			1.2em .4em .5em rgba(0, 0, 0, .3);
         }
         .menu-pane .button:active {
-          top: 0;
-          left: 0;
-          box-shadow:
-            0 0 0 .15em hsla(0, 0%, 0%, .9), /* hole */
-            .1em .075em .5em rgba(0,0,0,.3);
+			top: 0;
+			left: 0;
+			box-shadow:
+			0 0 0 .15em hsla(0, 0%, 0%, .9), /* hole */
+			.1em .075em .5em rgba(0,0,0,.3);
         }
-  .start { float: right; }
-  .select { float: left; }
+  
+		.start { float: right; }
+		.select { float: left; }
 
-.action-pane {
-  display: inline-block;
-  vertical-align: top;
-  border-bottom: 1px solid transparent;
-  margin: 2.6em 0 0 1.1em; }
-  .logo {
-    font: 1.3em/1 pretendo;
-    margin: 0 0 3.3rem 2rem;
-    cursor: default; }
-    .logo:after {
-      content: '\AE';
-      vertical-align: super;
-      font: 0.6rem sans-serif;
-    }
-  .action-pane .label {
-    display: inline-block;
-    background-color: #ddd;
-    border-radius: 0.4rem;
-    width: 4rem;
-    height: 4rem;
-    margin-left: .8rem;
-    text-align: right;
-    line-height: 6.1em;
-    position: relative;
-    font-size: 1.5rem; }
-    .action-pane .button {
-      position: absolute;
-      top: .02rem;
-      left: .22rem;
-      width: 3.2rem;
-      height: 3.2rem;
-      background: #E0421B; /* fallack */
-      background: -webkit-radial-gradient(35% 35%, circle closest-corner, #ff8957, #E0421B 100%);
-      background: -moz-radial-gradient(35% 35%, circle closest-corner, #ff8957, #E0421B 100%);
-      background: radial-gradient(35% 35%, circle closest-corner, #ff8957, #E0421B 100%);
-      border-radius: 2em;
-      border: .08em solid hsla(10, 90%, 55%, 1);
-      box-shadow:
-        2em 1em 0.2em 0 hsla(10, 90%, 45%, .5) inset, /* reflection */
-        .04em .1em 0 hsla(10, 90%, 30%, 1), /* 3d */
-        .08em .2em 0 hsla(10, 90%, 26%, 1),
-        .12em .3em 0 hsla(10, 90%, 23%, 1),
-        .1em .24em 0 .15em hsla(0, 0%, 15%, 1), /* hole */
-        .1em .075em .5em rgba(0, 0, 0, .3), /* shadow */
-        .3em .15em .5em rgba(0, 0, 0, .3),
-        .6em .3em .5em rgba(0, 0, 0, .3),
-        1.2em .6em .5em rgba(0, 0, 0, .3);
-    }
-    .action-pane .button:active {
-      top: .40rem;
-      left: .35rem;
-      box-shadow:
-        2em 1em 0.2em 0 hsla(10, 90%, 45%, .5) inset, /* reflection */
-        .05em .1em 0 hsla(10,90%,30%,1), /* 3d */
-        0 0 0 .15em hsla(0, 0%, 15%, 1), /* hole */
-        .1em .075em .5em rgba(0,0,0,.3); /* shadow */
-    }
+		.action-pane {
+			display: inline-block;
+			vertical-align: top;
+			border-bottom: 1px solid transparent;
+			margin: 2.6em 0 0 1.1em; 
+		}
+
+		.logo {
+			font: 1.3em/1;
+			margin: 0 0 3.3rem 2rem;
+			cursor: default; }
+			.logo:after {
+			content: '\AE';
+			vertical-align: super;
+			font: 0.6rem sans-serif;
+		}
+		
+		.action-pane .label {
+			display: inline-block;
+			background-color: #ddd;
+			border-radius: 0.4rem;
+			width: 4rem;
+			height: 4rem;
+			margin-left: .8rem;
+			text-align: right;
+			line-height: 6.1em;
+			position: relative;
+			font-size: 1.5rem; 
+		}
+
+		.action-pane .button {
+			position: absolute;
+			top: .02rem;
+			left: .22rem;
+			width: 3.2rem;
+			height: 3.2rem;
+			background: #E0421B; /* fallack */
+			background: -webkit-radial-gradient(35% 35%, circle closest-corner, #ff8957, #E0421B 100%);
+			background: -moz-radial-gradient(35% 35%, circle closest-corner, #ff8957, #E0421B 100%);
+			background: radial-gradient(35% 35%, circle closest-corner, #ff8957, #E0421B 100%);
+			border-radius: 2em;
+			border: .08em solid hsla(10, 90%, 55%, 1);
+			box-shadow:
+			2em 1em 0.2em 0 hsla(10, 90%, 45%, .5) inset, /* reflection */
+			.04em .1em 0 hsla(10, 90%, 30%, 1), /* 3d */
+			.08em .2em 0 hsla(10, 90%, 26%, 1),
+			.12em .3em 0 hsla(10, 90%, 23%, 1),
+			.1em .24em 0 .15em hsla(0, 0%, 15%, 1), /* hole */
+			.1em .075em .5em rgba(0, 0, 0, .3), /* shadow */
+			.3em .15em .5em rgba(0, 0, 0, .3),
+			.6em .3em .5em rgba(0, 0, 0, .3),
+			1.2em .6em .5em rgba(0, 0, 0, .3);
+		}
+		.action-pane .button:active {
+			top: .40rem;
+			left: .35rem;
+			box-shadow:
+			2em 1em 0.2em 0 hsla(10, 90%, 45%, .5) inset, /* reflection */
+			.05em .1em 0 hsla(10,90%,30%,1), /* 3d */
+			0 0 0 .15em hsla(0, 0%, 15%, 1), /* hole */
+			.1em .075em .5em rgba(0,0,0,.3); /* shadow */
+		}
 		
 	.gamepadInverse { transform: rotate(270deg); margin-top:170px;	}
 		
@@ -759,16 +746,12 @@
 			<a href="#sobre" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> APRESENTAÇÃO</a>
 			<a href="#curriculo" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> CURRÍCULO</a>
 			<a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTATO</a>
-			<!-- <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red"> -->
-				<!-- <i class="fa fa-search"></i> -->
-			<!-- </a> -->
 		</div>
 	<!-- Navbar em tela pequena -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium" style="z-index:4">
 			<a href="#sobre" class="w3-bar-item w3-button" onclick="toggleFunction()">APRESENTAÇÃO</a>
 			<a href="#curriculo" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
 			<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTATO</a>
-			<!-- <a href="#" class="w3-bar-item w3-button">SEARCH</a> -->
 		</div>
 	</div>
 	
@@ -789,13 +772,15 @@
 	</div>
 	<!-- TELA GRANDE  -->
 	<div class="w3-content w3-container w3-hide-small">
-		<p class="w3-justify">Meu nome é Victor Santos de Jesus. Fiz esse site para me apresentar melhor e mostrar um pouco do que sei fazer.<br>
+		<p class="w3-justify">
+			Meu nome é Victor Santos de Jesus. Fiz esse site para me apresentar melhor e mostrar um pouco do que sei fazer.<br>
 			Tenho 30 anos e atualmente moro na cidade de São Paulo, mais especificadamente na Zona Norte, em Santana.<br>
 			Atuo na área de informática há mais de 8 anos. Comecei nesta área com o desejo de criar novas soluções para empresas e 
 			para aprender como funciona um programa de computador.<br>
 			Minha primeira experiência foi lecionando após concluir um curso de informática.<br>
 			Hoje busco uma oportunidade para entrar na área de desenvolvimento e planejamento ou até mesmo na área de desenvolvimento de jogos, 
-			onde tenho bastante idéias criativas que gostaria de desenvolver.</p>
+			onde tenho bastante idéias criativas que gostaria de desenvolver.
+		</p>
 	</div>
 	<!-- TELA Pequena  -->
 	<div class="w3-row w3-hide-large w3-hide-medium">
@@ -804,26 +789,18 @@
 			<img src="./imgs/img-Index/avatar.png" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
 		</div>
 		<div class="w3-col m6 w3-padding-large">
-			<p class="w3-justify">	Meu nome é Victor Santos de Jesus. Fiz esse site para me apresentar melhor e mostrar um pouco do que sei fazer.<br>
-			Tenho 30 anos e atualmente moro na cidade de São Paulo, mais especificadamente na Zona Norte, em Santana.<br>
-			Atuo na área de informática há mais de 8 anos. Comecei nesta área com o desejo de criar novas soluções para empresas e 
-			para aprender como funciona um programa de computador.<br>
-			Minha primeira experiência foi lecionando após concluir um curso de informática.<br>
-			Hoje busco uma oportunidade para entrar na área de desenvolvimento e planejamento ou até mesmo na área de desenvolvimento de jogos, 
-			onde tenho bastante idéias criativas que gostaria de desenvolver.</p>
+			<p class="w3-justify">	
+				Meu nome é Victor Santos de Jesus. Fiz esse site para me apresentar melhor e mostrar um pouco do que sei fazer.<br>
+				Tenho 30 anos e atualmente moro na cidade de São Paulo, mais especificadamente na Zona Norte, em Santana.<br>
+				Atuo na área de informática há mais de 8 anos. Comecei nesta área com o desejo de criar novas soluções para empresas e 
+				para aprender como funciona um programa de computador.<br>
+				Minha primeira experiência foi lecionando após concluir um curso de informática.<br>
+				Hoje busco uma oportunidade para entrar na área de desenvolvimento e planejamento ou até mesmo na área de desenvolvimento de jogos, 
+				onde tenho bastante idéias criativas que gostaria de desenvolver.
+			</p>
 		</div>
 	</div>
-		<!-- Ç ç ã Á à Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá ,  -->
-		<!-- depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis,  -->
-		<!-- nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.  -->
-		<!-- Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita  -->
-		<!-- de bolis, mais bolis eu num gostis.</p> -->
-		<!-- <p>Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.  -->
-		<!-- Interagi no mé, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis  -->
-		<!-- tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper.  -->
-		<!-- Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet mé  -->
-		<!-- vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing  -->
-		<!-- elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa. -->
+		
 	<!-- TALENTOS -->
 	<div class="w3-content w3-container">
 		<p class="w3-large w3-center w3-padding-16">Minhas melhores habilidades e qualidades:</p>
@@ -971,10 +948,10 @@
 					<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Experiência Profissional</h2>
 					<div class="w3-container">
 						<h5 class="w3-opacity"><b>Digisystem Soluções<br/><i>Analista de Suporte - Front End Developer</i></b></h5>
-						<h6 class="w3-text-teal"><i class="far fa-calendar-alt fa-fw w3-margin-right"></i>Out 2017 – <span class="w3-tag w3-teal w3-round">Atual</span></h6>
+						<h6 class="w3-text-teal"><i class="far fa-calendar-alt fa-fw w3-margin-right"></i>Out 2017 – Mai 2019 <!-- <span class="w3-tag w3-teal w3-round">Atual</span> --></h6>
 						<p>	Prestação suporte a clientes SESI / SENAI / SEBRAE analisando o código dos sistemas desenvolvidos em C# e
 							corrigindo as devidas falhas. Desenvolvimento Web da Base de Conhecimento (HTML / CSS / JavaScript) – Front End.
-							Prestação de suporte remoto e in loco. Aplicação da metodologia ITIL na equipe.</p>
+							Prestação de suporte remoto e in loco. Gerenciamento e aplicação da metodologia ITIL na equipe. Suporte no sistema Oracle PEOPLESOFT.</p>
 						<hr>
 					</div>
 					<div class="w3-container">
@@ -1166,16 +1143,18 @@
 				</div>
 			</li>
 			<li>
-				<div class="timeline-badge trabalhos"><i class="fas fa-flag"></i></div>
+				<div class="timeline-badge trabalhos"><i class="far fa-flag"></i> <!-- <i class="fas fa-flag"></i> --> </div>
 				<div class="timeline-panel">
 					<div class="timeline-heading">
 						<h4 class="timeline-title">Trabalho: Digisystem Soluções</h4>
-						<p><small class="text-muted"><i class="far fa-calendar-alt w3-text-teal"></i> Outubro de 2017 - <span class="w3-tag w3-teal w3-round">Atual</span></small></p>
+						<p><small class="text-muted"><i class="far fa-calendar-alt w3-text-teal"></i> Outubro de 2017 – Maio 2019 <!-- <span class="w3-tag w3-teal w3-round">Atual</span> --></small></p>
 					</div>
 					<div class="timeline-body">
 						<p>	Em Outubro de 2017, fui contratado pela Digisystem Soluções para atuar como Analista de Suporte N1.<br/>
 							Após quatro meses, com meu desempenho, comecei a atuar como Analista N2 e a desenvolver uma 
-							<i>"Intranet de Base de Conhecimentos"</i> em um dos clientes que não possuia nenhuma base.</p>
+							<i>"Intranet de Base de Conhecimentos"</i> em um dos clientes que não possuia nenhuma base.<br/>
+							Também auxiliei o gerenciamento da equipe implementando ITIL e melhorando os relatórios gerenciais,
+							além de também prestar suporte em sistemas Oracle PEOPLESOFT.</p>
 					</div>
 				</div>
 			</li>
@@ -1323,46 +1302,36 @@
 	</div>
 
 	<div style="position:relative;">
-	  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 30px;text-align: justify;">
-		<p>Alguns dos sites que eu fiz. São estáticos, mas mostra meu entendimento em Javascript, CSS e HTML5.</p>
-		<!-- Container (Sessão SITES CONSTRUIDOS) ==================================================================================== -->	
-				<div id="" class="row container-fluid w3-animate-left">
-					<!-- <a class="btn btn-circle" href="https://victorsjesus.github.io/CVPortfolio/MG.html"> -->
-						<!-- <img style="height: 48px; margin-left:-5px;" src="./imgs/img-Index/Magic_icon.png" class=""> -->
-					<!-- </a> -->
-					
-					<!-- <a class="btn btn-circle" onClick='javascript:location.href="https://victorsjesus.github.io/CVPortfolio/TB.html"'> -->
-						<!-- <img style="height: 46px; margin-left:-8px;" src="./imgs/img-Index/Tibia_icon.png" class=""> -->
-					<!-- </a> -->
-					<!-- ---------============---------- -->
-					<div class="row sites w3-hover-text-teal">
-						<a class="btn btn-circle" href="https://victorsjesus.github.io/CVPortfolio/MG.html" target="_blank">
-							<img style="height: 48px; margin-left:-5px;" src="./imgs/img-Index/Magic_icon.png" target="_blank">
-						</a>
-						<a href="https://victorsjesus.github.io/CVPortfolio/MG.html" target="_blank">
-							CARTAS MÁGICAS
-						</a>	
-					</div>
-					<div class="row sites w3-hover-text-teal">
-						<a class="btn btn-circle" href="https://victorsjesus.github.io/CVPortfolio/TB.html">
-							<img style="height: 46px; margin-left:-8px;" src="./imgs/img-Index/Tibia_icon.png" class="">
-						</a>
-						<a href="https://victorsjesus.github.io/CVPortfolio/TB.html" target="_blank">
-							<span style="margin-left:15px;">TIBIA</span><br><span style="margin-left:15px;">HELP</span>
-						</a>
-					</div>
-					<div class="row sites w3-hover-text-teal">
-						<a class="btn btn-circle" href="https://victorsjesus.github.io/CVPortfolio/SG.html">
-							<img style="height: 55px; margin-left:-11px;" src="./imgs/img-Index/horoscopo_icon.png" class="">
-						</a>
-						<a href="https://victorsjesus.github.io/CVPortfolio/SG.html" target="_blank">
-							<span style="margin-left:-6px;">CONSULTA</span><br><span style="margin-left:3px;">MISTICA</span>
-						</a>
-					</div>
+		<div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 30px;text-align: justify;">
+			<p>Alguns dos sites que eu fiz. São estáticos, mas mostra meu entendimento em Javascript, CSS e HTML5.</p>
+			<!-- Container (Sessão SITES CONSTRUIDOS) ==================================================================================== -->	
+			<div id="" class="row container-fluid w3-animate-left">
+				<div class="row sites w3-hover-text-teal">
+					<a class="btn btn-circle" href="https://victorsjesus.github.io/CVPortfolio/MG.html" target="_blank">
+						<img style="height: 48px; margin-left:-5px;" src="./imgs/img-Index/Magic_icon.png" target="_blank">
+					</a>
+					<a href="https://victorsjesus.github.io/CVPortfolio/MG.html" target="_blank">
+						CARTAS MÁGICAS
+					</a>	
 				</div>
-			
-		
-	  </div>
+				<div class="row sites w3-hover-text-teal">
+					<a class="btn btn-circle" href="https://victorsjesus.github.io/CVPortfolio/TB.html">
+						<img style="height: 46px; margin-left:-8px;" src="./imgs/img-Index/Tibia_icon.png" class="">
+					</a>
+					<a href="https://victorsjesus.github.io/CVPortfolio/TB.html" target="_blank">
+						<span style="margin-left:15px;">TIBIA</span><br><span style="margin-left:15px;">HELP</span>
+					</a>
+				</div>
+				<div class="row sites w3-hover-text-teal">
+					<a class="btn btn-circle" href="https://victorsjesus.github.io/CVPortfolio/SG.html">
+						<img style="height: 55px; margin-left:-11px;" src="./imgs/img-Index/horoscopo_icon.png" class="">
+					</a>
+					<a href="https://victorsjesus.github.io/CVPortfolio/SG.html" target="_blank">
+						<span style="margin-left:-6px;">CONSULTA</span><br><span style="margin-left:3px;">MISTICA</span>
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!-- ============================================================================================================= -->	
 	<!-- ENTRE EM CONTATO (Sessão Contato) =========================================================================== -->
@@ -1410,7 +1379,7 @@
 		Encontre-me nas redes sociais.
 		<p id="sociais">
 			<a href="https://www.facebook.com/victorsjesus" TARGET="_blank"><i class="fab fa-facebook-square w3-hover-opacity"></i></a>
-			<a href="https://www.instagram.com/victorsjesus1" TARGET="_blank"><i class="fab fa-instagram w3-hover-opacity"></i></a>
+			<a href="https://www.instagram.com/superpapaigamer" TARGET="_blank"><i class="fab fa-instagram w3-hover-opacity"></i></a>
 			<a href="https://steamcommunity.com/id/victorsjesus/" TARGET="_blank"><i class="fab fa-steam w3-hover-opacity"></i></a>
 			<a href="https://github.com/victorsjesus" TARGET="_blank"><i class="fab fa-github w3-hover-opacity"></i></a>
 			<!-- <i class="fab fa-twitter w3-hover-opacity" style="cursor:pointer;"></i> -->
